@@ -108,23 +108,24 @@
     /* ── STICKY CTA ── */
     #sticky-cta { transition: opacity 300ms ease, transform 300ms ease; }
 
-    /* ── SCROLL REVEAL variants ── */
-    .reveal        { opacity: 0; transform: translateY(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-left   { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-right  { opacity: 0; transform: translateX(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-scale  { opacity: 0; transform: scale(0.95) translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible
-                   { opacity: 1; transform: none; }
+    /* ── SCROLL REVEAL ── */
+    .reveal, .reveal-left, .reveal-right, .reveal-scale {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible {
+      opacity: 1; transform: none;
+    }
 
     /* stagger delays */
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1, .delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2, .delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3, .delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4, .delay-4 { transition-delay: 0.4s; }
+    .delay-5                   { transition-delay: 0.5s; }
 
     /* ── HERO ANIMATIONS ── */
-    @keyframes heroFadeUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
+    @keyframes heroFadeUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
     @keyframes heroFadeIn   { from { opacity:0; } to { opacity:1; } }
     @keyframes floatY       { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
     @keyframes gradientFlow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
@@ -132,11 +133,11 @@
     @keyframes lineGrow     { from{width:0} to{width:100%} }
     @keyframes countUp      { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
 
-    .hero-tag   { animation: heroFadeUp 0.8s cubic-bezier(.22,1,.36,1) 0.3s both; }
-    .hero-h1    { animation: heroFadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.5s both; }
-    .hero-sub   { animation: heroFadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.7s both; }
-    .hero-btns  { animation: heroFadeUp 0.9s cubic-bezier(.22,1,.36,1) 0.9s both; }
-    .hero-scroll{ animation: heroFadeIn 1s ease 1.2s both, floatY 2.5s ease-in-out 2s infinite; }
+    .hero-tag   { animation: heroFadeUp 0.8s ease 0.15s both; }
+    .hero-h1    { animation: heroFadeUp 0.8s ease 0.30s both; }
+    .hero-sub   { animation: heroFadeUp 0.8s ease 0.45s both; }
+    .hero-btns  { animation: heroFadeUp 0.8s ease 0.60s both; }
+    .hero-scroll{ animation: heroFadeIn 0.8s ease 0.75s both, floatY 2.5s ease-in-out 2s infinite; }
 
     /* animated gold divider line */
     .gold-line { display:block; height:1px; background:linear-gradient(90deg,transparent,#C9A84C,transparent); animation: lineGrow 1s ease 0.5s both; }
@@ -1082,7 +1083,7 @@
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.12 });
     revealEls.forEach(el => io.observe(el));
   }
   window.addEventListener('load', () => {
