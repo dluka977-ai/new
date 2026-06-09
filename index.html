@@ -254,244 +254,347 @@
 <section id="meni" class="py-24 px-4 sm:px-6 lg:px-8" style="background: #120E0B;">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-14 reveal">
-      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Šta nudimo</p>
+      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Institut dobrog ukusa · Grill Bar</p>
       <h2 class="font-display text-4xl sm:text-5xl text-cream mb-4">Naš meni</h2>
-      <p class="text-cream/60 text-lg max-w-xl mx-auto">Svako jelo je priča za sebe — od lokalnih sastojaka do modernih tehnika pripreme.</p>
+      <p class="text-cream/60 text-base max-w-xl mx-auto">Doručak 08:00–12:00 &nbsp;·&nbsp; Glavni meni 12:00–21:00</p>
     </div>
 
     <!-- Tab navigation -->
-    <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Kategorije menija">
-      <button role="tab" aria-selected="true" aria-controls="tab-predjela" data-tab="predjela"
-        class="menu-tab active-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer bg-gold text-charcoal">
-        Predjela
-      </button>
-      <button role="tab" aria-selected="false" aria-controls="tab-glavna" data-tab="glavna"
-        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+    <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" role="tablist" aria-label="Kategorije menija">
+      <button role="tab" aria-selected="true" aria-controls="tab-meso" data-tab="meso"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer bg-gold text-charcoal">
         Glavna jela
       </button>
-      <button role="tab" aria-selected="false" aria-controls="tab-burgeri" data-tab="burgeri"
-        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
-        Burgeri &amp; roštilj
+      <button role="tab" aria-selected="false" aria-controls="tab-rebarca" data-tab="rebarca"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Rebarca
       </button>
-      <button role="tab" aria-selected="false" aria-controls="tab-pica" data-tab="pica"
-        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
-        Pića
+      <button role="tab" aria-selected="false" aria-controls="tab-sendvici" data-tab="sendvici"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Sendviči
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-dorucak" data-tab="dorucak"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Doručak
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-salate" data-tab="salate"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Salate
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-sosovi" data-tab="sosovi"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Sosovi
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-prilozi" data-tab="prilozi"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Prilozi
       </button>
       <button role="tab" aria-selected="false" aria-controls="tab-deserti" data-tab="deserti"
-        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
         Deserti
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-vino" data-tab="vino"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Vino
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-pivo" data-tab="pivo"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Pivo
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-kokteli" data-tab="kokteli"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Kokteli
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-zestoka" data-tab="zestoka"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Žestoka
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-kafa" data-tab="kafa"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Kafa
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-bezalk" data-tab="bezalk"
+        class="menu-tab font-body font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Bezalkoholna
       </button>
     </div>
 
-    <!-- Tab content panels -->
-    <div id="tab-predjela" role="tabpanel" class="menu-panel grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Bruschetta sa paradajzom</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
+    <!-- Helper: reusable menu item row -->
+    <!-- GLAVNA JELA -->
+    <div id="tab-meso" role="tabpanel" class="menu-panel space-y-4">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Glavna jela (meso)</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Pileći bečki šnicla <span class="text-cream/45 text-xs">(340g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">680 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Svinjski bečki šnicla <span class="text-cream/45 text-xs">(340g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">610 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Pileći ražnjići <span class="text-cream/45 text-xs">(540g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">880 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Svinjski ražnjići <span class="text-cream/45 text-xs">(540g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">750 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Losos sa grila <span class="text-cream/45 text-xs">(370g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">1.500 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Hrskavi tost, sveži paradajz, bosiljak i maslinovo ulje</p>
       </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Čorba dana</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">450 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Sezonska domaća čorba sa svežim povrćem i začinima</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Kalamari sa roštilja</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">850 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Mediteranski kalamari sa limunom i aioli sosom</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Mešano predjelo</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">950 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Selekcija domaćih sireva, pršute i kiselih krastavaca</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Goveđi tartare</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Svežo mlevena junetina, kapari, senf i tost</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Supa od bundeve</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">500 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Kremasta supa sa đumbirom, kokosovim mlekom i semenkama</p>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Mesni set — 4.900 RSD</p>
+        <p class="px-6 py-4 text-cream/60 text-sm leading-relaxed">2 porcije rebaraca (820g) po izboru · Pileći bečki šnicla (240g) · Svinjski bečki šnicla (240g) · Pileći ražnjići (440g) · Svinjski ražnjići (440g) · Prilog (400g) po izboru · 2 sosa (140g) po izboru</p>
       </div>
     </div>
 
-    <div id="tab-glavna" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Ramstek sa povrćem</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.450 RSD</span>
+    <!-- REBARCA -->
+    <div id="tab-rebarca" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Rebarca koja se raspaju sa kosti (460g)</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Med i senf sos</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">1.400 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sos od šumskog voća</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">1.400 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">BBQ sos</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">1.490 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Teriyaki sos</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">1.590 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Sočni komad junećeg mesa sa sezonskim povrćem</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Piletina u sosu od limuna</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Pečena piletina sa kremastim sosom od limuna i kaparima</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Pasta truffle</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.250 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Sveža pasta sa kremom od tartufa i parmezanom</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Losos sa špinatom</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.400 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Norweski losos na roštilju sa glaziranim špinatom</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Rizoto sa plodovima mora</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.350 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Kremasti rizoto sa škampima, dagnjama i školjkama</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Vegetarijanska tanjir</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">950 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Sezonsko povrće, hummus, falafel i grillovani halloumi</p>
       </div>
     </div>
 
-    <div id="tab-burgeri" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">BF Classic Burger</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.200 RSD</span>
+    <!-- SENDVICI -->
+    <div id="tab-sendvici" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Sendviči</p>
+        <div class="divide-y divide-gold/10">
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start">
+              <span class="font-body text-cream text-sm font-medium">Pileći <span class="text-cream/45 text-xs font-normal">(320g)</span></span>
+              <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">610 RSD</span>
+            </div>
+            <p class="text-cream/50 text-xs mt-1">Ćabata, krem sir, paradajz, krastavac, đumbir, ajsberg salata, piletina, med-senf sos</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start">
+              <span class="font-body text-cream text-sm font-medium">Losos <span class="text-cream/45 text-xs font-normal">(230g)</span></span>
+              <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">850 RSD</span>
+            </div>
+            <p class="text-cream/50 text-xs mt-1">Ćabata, krem sir, inćuni, paradajz, krastavac, đumbir, ajsberg salata, losos, caciki sos</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start">
+              <span class="font-body text-cream text-sm font-medium">Vegetarijanski <span class="text-cream/45 text-xs font-normal">(260g)</span></span>
+              <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">580 RSD</span>
+            </div>
+            <p class="text-cream/50 text-xs mt-1">Ćabata, krem sir, paradajz, krastavac, đumbir, rukola, avokado</p>
+          </div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">200g junetine, čedar, karamela luk, smokey sos, brioche</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Double Truffle</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.500 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Dupla pljeskavica, sos od tartufa, gurmanski sir, rukola</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Pileći crispy burger</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.050 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Pohana piletina, coleslaw, jalapeno, honey-mustard sos</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Ćevapi sa kajmakom</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">900 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">10 komada, domaći kajmak, luk i somun</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Mešano sa roštilja</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.400 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Vešalica, pljeskavica, rolovani ćevapi, prilog</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Vegan Burger</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Biljni burger, avokado, svež paradajz, vegan sos</p>
       </div>
     </div>
 
-    <div id="tab-pica" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Domaća limonada</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">350 RSD</span>
+    <!-- DORUCAK -->
+    <div id="tab-dorucak" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Doručak · 08:00–12:00</p>
+        <p class="px-6 py-3 text-cream/50 text-xs border-b border-gold/10">Pržena jaja (210g) — Jaja, ajsberg salata, čeri paradajz, feta sir, ćabata, kobasice</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sa klasičnim kobasicama</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">500 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sa ljutim kobasicama</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">540 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sa kobasicama sa sirom</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">520 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Svežo ceđeni limun, menta, med – 0.5L</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Domaće pivo</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">300 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Toceno craft pivo iz beogradske pivare – 0.5L</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Espresso / Cappuccino</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">180 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Specialty kafa od single origin zrna</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Fresh sokovi</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">380 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Miks od sezonskog voća – narandža, šargarepa, jabuka</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Vino – čaša</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">350 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Selekcija domaćih i uvoznih vina, belo i crveno</p>
-      </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Smoothie bowl</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
-        </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Mango, banana, bobičasto voće, granola i chia semenke</p>
       </div>
     </div>
 
-    <div id="tab-deserti" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Fondant od čokolade</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">680 RSD</span>
+    <!-- SALATE -->
+    <div id="tab-salate" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Salate</p>
+        <div class="divide-y divide-gold/10">
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start"><span class="font-body text-cream text-sm font-medium">Cezar <span class="text-cream/45 text-xs font-normal">(280g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">740 RSD</span></div>
+            <p class="text-cream/50 text-xs mt-1">Zelena salata, čeri paradajz, piletina, krutoni, parmezan, Cezar sos sa inćunima i jajima</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start"><span class="font-body text-cream text-sm font-medium">Losos <span class="text-cream/45 text-xs font-normal">(250g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">770 RSD</span></div>
+            <p class="text-cream/50 text-xs mt-1">Zelena salata, losos, avokado, bademi</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start"><span class="font-body text-cream text-sm font-medium">Šopska <span class="text-cream/45 text-xs font-normal">(350g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">580 RSD</span></div>
+            <p class="text-cream/50 text-xs mt-1">Paradajz, krastavci, mocarela</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start"><span class="font-body text-cream text-sm font-medium">Pileća salata sa grila <span class="text-cream/45 text-xs font-normal">(400g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">670 RSD</span></div>
+            <p class="text-cream/50 text-xs mt-1">Zelena salata, piletina, tikvice, patlidžan, paprika, čeri paradajz, crveni luk</p>
+          </div>
+          <div class="px-6 py-4 menu-card cursor-default">
+            <div class="flex justify-between items-start"><span class="font-body text-cream text-sm font-medium">Povrće sa grila <span class="text-cream/45 text-xs font-normal">(400g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">710 RSD</span></div>
+            <p class="text-cream/50 text-xs mt-1">Tikvice, patlidžan, rukola, feta sir</p>
+          </div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Topli čokoladni fondant sa sladoledom od vanile</p>
       </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Cheesecake</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">600 RSD</span>
+    </div>
+
+    <!-- SOSOVI -->
+    <div id="tab-sosovi" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Sosovi</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Ajvar</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">110 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Paradajz sos <span class="text-cream/45 text-xs">(70g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">110 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Beli luk sos <span class="text-cream/45 text-xs">(70g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">110 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">BBQ sos <span class="text-cream/45 text-xs">(70g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">110 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Caciki <span class="text-cream/45 text-xs">(70g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">110 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Paprika sos <span class="text-cream/45 text-xs">(70g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">200 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Njujorški cheesecake sa preliv od sezonskog voća</p>
       </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Tiramisu</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">620 RSD</span>
+    </div>
+
+    <!-- PRILOZI -->
+    <div id="tab-prilozi" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Prilozi</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Mladi krompir <span class="text-cream/45 text-xs">(200g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">250 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Pomfrit <span class="text-cream/45 text-xs">(200g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">250 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Ajapsandali hladan <span class="text-cream/45 text-xs">(200g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">300 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Ajapsandali topao <span class="text-cream/45 text-xs">(200g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">300 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Klasični tiramisu po originalnoj recepturi</p>
       </div>
-      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
-        <div class="flex justify-between items-start mb-2">
-          <h3 class="font-display text-base text-cream">Panna cotta</h3>
-          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
+    </div>
+
+    <!-- DESERTI -->
+    <div id="tab-deserti" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Deserti</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Medovik <span class="text-cream/45 text-xs">(230g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">550 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Napoleon torta <span class="text-cream/45 text-xs">(230g)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">550 RSD</span></div>
         </div>
-        <p class="text-cream/55 text-sm leading-relaxed">Kremasta panna cotta sa sosom od maline</p>
+      </div>
+    </div>
+
+    <!-- VINO -->
+    <div id="tab-vino" role="tabpanel" class="menu-panel hidden space-y-4">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Crvena vina</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Suvo Merlot Chateau Bois Pertuis <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">750 / 3.375 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Suvo Primitivo Puglia Monteverdi <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">870 / 3.915 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Suvo Cabernet Plantaže <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">360 / 1.625 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Polusuvo Vranac Tikveš <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">460 / 2.075 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Poluslatko Paris Seduction <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">390 / 1.755 RSD</span></div>
+        </div>
+      </div>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Bela vina</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Suvo Toscana Villa Antinori <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">900 / 4.050 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Suvo Chardonnay Plantaže <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">360 / 1.625 RSD</span></div>
+        </div>
+      </div>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Penušava vina</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Crémant de Bordeaux Calvet <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">720 / 3.240 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Moscato d'Asti La Cacciatora <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">590 / 2.650 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Prosecco Santomé <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">650 / 2.925 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Prosecco Valmarone <span class="text-cream/45 text-xs">150ml / 750ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">300 / 1.350 RSD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PIVO -->
+    <div id="tab-pivo" role="tabpanel" class="menu-panel hidden space-y-4">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Točeno pivo</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Heineken <span class="text-cream/45 text-xs">330ml / 500ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">280 / 370 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Zaječarsko <span class="text-cream/45 text-xs">300ml / 500ml</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">180 / 250 RSD</span></div>
+        </div>
+      </div>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Pivo u flašama</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Heineken <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">320 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Heineken Silver <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">320 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Amstel <span class="text-cream/45 text-xs">(330ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">280 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Birra Moretti <span class="text-cream/45 text-xs">(330ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">300 RSD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KOKTELI -->
+    <div id="tab-kokteli" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Kokteli</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Aperol Spritz <span class="text-cream/45 text-xs">(180ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">680 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Gin &amp; Tonic <span class="text-cream/45 text-xs">(180ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">590 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Cuba Libre <span class="text-cream/45 text-xs">(180ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">610 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Mint Julep <span class="text-cream/45 text-xs">(105ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">710 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Whiskey Sour <span class="text-cream/45 text-xs">(120ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">750 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Negroni <span class="text-cream/45 text-xs">(90ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">740 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Boulevardier <span class="text-cream/45 text-xs">(105ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">770 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Irish Coffee <span class="text-cream/45 text-xs">(220ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">780 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Honey Jäger <span class="text-cream/45 text-xs">(120ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">805 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Rakija Smash <span class="text-cream/45 text-xs">(105ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">540 RSD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ZESTOKA -->
+    <div id="tab-zestoka" role="tabpanel" class="menu-panel hidden space-y-4">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Aperitivi i digestivi</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Aperol <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">310 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Campari <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">330 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Vermut Rosso <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">350 RSD</span></div>
+        </div>
+      </div>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Žestoka pića</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Whisky Jameson <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">370 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Whisky Grant's <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Gin Gordon's <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">280 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Rum Bacardi <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">350 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Vodka Beluga <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">260 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Rakija — asortiman <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">150 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Jägermeister <span class="text-cream/45 text-xs">(30ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">310 RSD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KAFA -->
+    <div id="tab-kafa" role="tabpanel" class="menu-panel hidden space-y-4">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Kafa</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Espresso <span class="text-cream/45 text-xs">(40ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">170 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Americano <span class="text-cream/45 text-xs">(200ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">170 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Macchiato <span class="text-cream/45 text-xs">(45ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">130 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Cappuccino <span class="text-cream/45 text-xs">(180ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">190 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Raf kafa <span class="text-cream/45 text-xs">(280ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">210 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Latte <span class="text-cream/45 text-xs">(300ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">200 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Ledeni latte <span class="text-cream/45 text-xs">(300ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">250 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Espresso Bitter <span class="text-cream/45 text-xs">(300ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Bumble kafa <span class="text-cream/45 text-xs">(300ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Mleko — asortiman</span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">+90 RSD</span></div>
+        </div>
+      </div>
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Ostalo</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Limunad<span class="text-cream/45 text-xs"> (230ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">180 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Čaj — asortiman <span class="text-cream/45 text-xs">(200ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">130 RSD</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEZALKOHOLNA -->
+    <div id="tab-bezalk" role="tabpanel" class="menu-panel hidden">
+      <div class="bg-wood/40 border border-gold/15 rounded-2xl overflow-hidden">
+        <p class="text-gold text-xs font-semibold tracking-widest uppercase px-6 pt-5 pb-3 border-b border-gold/10">Bezalkoholna pića</p>
+        <div class="divide-y divide-gold/10">
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Schweppes Tonic <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Schweppes Bitter <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sprite <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">210 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Fanta <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">210 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Coca-Cola <span class="text-cream/45 text-xs">(250ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">210 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Sokovi — asortiman <span class="text-cream/45 text-xs">(200ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">230 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Rosa gaziirana voda <span class="text-cream/45 text-xs">(330ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">190 RSD</span></div>
+          <div class="flex justify-between items-center px-6 py-3 menu-card cursor-default"><span class="font-body text-cream text-sm">Rosa negazirana voda <span class="text-cream/45 text-xs">(330ml)</span></span><span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-4">190 RSD</span></div>
+        </div>
       </div>
     </div>
 
@@ -908,12 +1011,13 @@
       tabs.forEach(t => {
         const active = t.dataset.tab === target;
         t.setAttribute('aria-selected', String(active));
-        t.classList.toggle('bg-gold', active);
-        t.classList.toggle('text-charcoal', active);
-        t.classList.toggle('text-cream/60', !active);
-        t.classList.toggle('border', !active);
-        t.classList.toggle('border-gold/20', !active);
-        if (active) { t.classList.remove('text-cream/60', 'border', 'border-gold/20'); }
+        if (active) {
+          t.classList.add('bg-gold', 'text-charcoal');
+          t.classList.remove('text-cream/60', 'border', 'border-gold/20', 'hover:border-gold/50', 'hover:text-cream');
+        } else {
+          t.classList.remove('bg-gold', 'text-charcoal');
+          t.classList.add('text-cream/60', 'border', 'border-gold/20', 'hover:border-gold/50', 'hover:text-cream');
+        }
       });
       panels.forEach(p => {
         p.classList.toggle('hidden', p.id !== `tab-${target}`);
