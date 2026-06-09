@@ -1063,6 +1063,10 @@
 
 <!-- ═══════════════════════════════════════════════════ SCRIPTS ══ -->
 <script>
+  if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+  window.scrollTo(0, 0);
+  window.addEventListener('pageshow', (e) => { if (e.persisted) window.scrollTo(0, 0); });
+
   // ── Sticky CTA show/hide
   const stickyCta = document.getElementById('sticky-cta');
   window.addEventListener('scroll', () => {
