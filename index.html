@@ -77,7 +77,6 @@
     }
     .hero-bg-img {
       position: absolute; inset: 0; z-index: 0;
-      background: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=85') center 60%/cover no-repeat;
     }
     .hero-bg-overlay {
       position: absolute; inset: 0; z-index: 1;
@@ -239,6 +238,17 @@
     /* ── PULSE RING on call btn ── */
     @keyframes pingRing { 75%,100%{ transform:scale(1.6); opacity:0; } }
     .ping-ring { animation: pingRing 1.5s cubic-bezier(0,0,.2,1) infinite; }
+
+    /* ── STAR COLOR ── */
+    .star { color: #C9A84C; }
+
+    /* ── VIDEO HERO ── */
+    .hero-bg-img { overflow: hidden; }
+    .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 60%; }
+
+    /* ── SPECIJAL DANA ── */
+    @keyframes specialPulse { 0%,100%{ box-shadow:0 0 0 0 rgba(201,168,76,0); } 50%{ box-shadow:0 0 20px 4px rgba(201,168,76,0.15); } }
+    .special-card { animation: specialPulse 3s ease-in-out infinite; }
   </style>
 </head>
 <body>
@@ -295,8 +305,14 @@
 
 <!-- ═══════════════════════════════════════════════════ HERO ══ -->
 <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 relative overflow-hidden" style="background:#0D0A07;">
-  <!-- Ken Burns background -->
-  <div class="hero-bg-img" aria-hidden="true"></div>
+  <!-- Video background with image fallback -->
+  <div class="hero-bg-img" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=85">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-restaurant-food-on-table-41815-large.mp4" type="video/mp4">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=85" alt="" class="hero-video">
+    </video>
+  </div>
   <div class="hero-bg-overlay" aria-hidden="true"></div>
   <!-- Ambient orbs -->
   <div class="orb w-96 h-96 bg-gold/8 top-1/4 -left-32" style="animation-delay:0s" aria-hidden="true"></div>
@@ -324,12 +340,77 @@
         Wolt
       </a>
     </div>
+
+    <!-- Status + Google rating strip -->
+    <div class="flex items-center justify-center gap-3 mt-6 flex-wrap" style="animation: heroFadeUp 0.8s ease 0.88s both; opacity:0;">
+      <!-- Otvoreno/Zatvoreno badge -->
+      <div id="hero-status" class="flex items-center gap-2 bg-charcoal/60 backdrop-blur-sm border border-gold/20 rounded-full px-4 py-2">
+        <span id="hero-status-dot" class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0" style="box-shadow:0 0 6px rgba(74,222,128,0.8)"></span>
+        <span id="hero-status-text" class="text-cream/90 text-xs font-body font-semibold">Otvoreno</span>
+        <span id="hero-status-hours" class="text-cream/45 text-xs font-body">· do 21:00</span>
+      </div>
+      <!-- Google rating -->
+      <a href="https://www.google.com/maps/place/Bespravni+Fakultet/@44.807,20.479,17z/data=!3m1!4b1!4m5!3m4!1s0x475a7ab70cf58019:0x89d72fa2d1c0da3a!8m2!3d44.807!4d20.479"
+         target="_blank" rel="noopener noreferrer"
+         class="flex items-center gap-2 bg-charcoal/60 backdrop-blur-sm border border-gold/20 rounded-full px-4 py-2 hover:border-gold/50 transition-colors duration-200 cursor-pointer group">
+        <span class="flex gap-0.5">
+          <svg class="w-3 h-3 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-3 h-3 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-3 h-3 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-3 h-3 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-3 h-3 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </span>
+        <span class="text-cream/90 text-xs font-body font-semibold">4.8</span>
+        <span class="text-cream/45 text-xs font-body">· 245 recenzija na Google</span>
+        <svg class="w-3 h-3 text-cream/40 group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
+    </div>
   </div>
 
   <!-- Scroll indicator -->
   <div class="hero-scroll absolute bottom-8 inset-x-0 flex flex-col items-center gap-2 text-cream/40 cursor-pointer" onclick="document.getElementById('o-nama').scrollIntoView({behavior:'smooth'})" aria-hidden="true">
     <span class="font-body tracking-widest uppercase" style="font-size:10px">Scroll</span>
     <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ SPECIJAL DANA ══ -->
+<section id="specijal" class="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style="background:#160F0B;">
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true" style="background:linear-gradient(135deg,rgba(201,168,76,0.04) 0%,transparent 60%);"></div>
+  <div class="max-w-5xl mx-auto">
+    <div class="special-card bg-wood/40 border border-gold/30 rounded-3xl overflow-hidden reveal">
+      <div class="grid md:grid-cols-2 gap-0">
+        <!-- Image -->
+        <div class="relative h-56 md:h-auto overflow-hidden">
+          <img id="specijal-img"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"
+            alt="Specijal dana"
+            class="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div class="absolute inset-0" style="background:linear-gradient(to right,transparent 60%,#2A1A10 100%);"></div>
+          <div class="absolute top-4 left-4">
+            <span class="bg-gold text-charcoal font-body font-bold text-xs tracking-widest uppercase px-3 py-1.5 rounded-full">
+              Specijal dana
+            </span>
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="p-8 md:p-10 flex flex-col justify-center">
+          <p class="text-cream/40 text-xs font-body tracking-widest uppercase mb-3" id="specijal-dan">Ponedeljak</p>
+          <h3 class="font-display text-3xl sm:text-4xl text-cream mb-3 leading-tight" id="specijal-naziv">Klasični Burger</h3>
+          <p class="text-cream/65 text-base leading-relaxed mb-6 font-body" id="specijal-opis">
+            Juneći pljeskavica od 200g, cheddar, karamelizovani luk, domaći umak, brioche lepinja. Servira se sa pomfritom i coleslaw salatom.
+          </p>
+          <div class="flex items-center gap-4 flex-wrap">
+            <span class="font-display text-2xl gold-text" id="specijal-cena">890 RSD</span>
+            <a href="#meni" class="gold-btn bg-gold/15 border border-gold/40 text-gold font-body font-semibold text-sm px-5 py-2.5 rounded-lg hover:bg-gold hover:text-charcoal transition-all duration-200 cursor-pointer">
+              Pogledaj meni →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -356,15 +437,15 @@
         </p>
         <div class="grid grid-cols-3 gap-4">
           <div class="reveal-scale delay-1 text-center p-4 rounded-xl border border-gold/20 bg-wood/30 hover:border-gold/50 hover:bg-gold/5 transition-all duration-300 cursor-default">
-            <p class="font-display text-3xl gold-text mb-1">7+</p>
+            <p class="font-display text-3xl gold-text mb-1 stat-counter" id="stat-years" data-target="7" data-suffix="+">0</p>
             <p class="text-cream/60 text-sm font-body">godina iskustva</p>
           </div>
           <div class="reveal-scale delay-2 text-center p-4 rounded-xl border border-gold/20 bg-wood/30 hover:border-gold/50 hover:bg-gold/5 transition-all duration-300 cursor-default">
-            <p class="font-display text-3xl gold-text mb-1">1.000</p>
+            <p class="font-display text-3xl gold-text mb-1 stat-counter" id="stat-guests" data-target="1000" data-suffix="+" data-format="thousands">0</p>
             <p class="text-cream/60 text-sm font-body">zadovoljnih gostiju</p>
           </div>
           <div class="reveal-scale delay-3 text-center p-4 rounded-xl border border-gold/20 bg-wood/30 hover:border-gold/50 hover:bg-gold/5 transition-all duration-300 cursor-default">
-            <p class="font-display text-3xl gold-text mb-1">50+</p>
+            <p class="font-display text-3xl gold-text mb-1 stat-counter" id="stat-dishes" data-target="50" data-suffix="+">0</p>
             <p class="text-cream/60 text-sm font-body">jela u ponudi</p>
           </div>
         </div>
@@ -380,9 +461,9 @@
           />
         </div>
         <!-- Badge -->
-        <div class="absolute -bottom-4 -left-4 bg-gold text-charcoal rounded-xl px-5 py-4 shadow-2xl">
-          <p class="font-display text-sm font-bold">Otvoreno danas</p>
-          <p class="font-body text-xs font-semibold mt-0.5">09:00 – 21:00</p>
+        <div id="onam-status-badge" class="absolute -bottom-4 -left-4 bg-gold text-charcoal rounded-xl px-5 py-4 shadow-2xl">
+          <p class="font-display text-sm font-bold" id="onam-status-text">Otvoreno danas</p>
+          <p class="font-body text-xs font-semibold mt-0.5" id="onam-status-hours">09:00 – 21:00</p>
         </div>
       </div>
     </div>
@@ -909,6 +990,26 @@
     <div class="text-center mb-14">
       <span class="section-badge reveal">Šta kažu gosti</span>
       <h2 class="font-display text-4xl sm:text-5xl text-cream reveal delay-1">Recenzije</h2>
+      <a href="https://www.google.com/maps/place/Bespravni+Fakultet/@44.807,20.479,17z/data=!3m1!4b1!4m5!3m4!1s0x475a7ab70cf58019:0x89d72fa2d1c0da3a!8m2!3d44.807!4d20.479"
+         target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 mt-5 px-6 py-3 bg-wood/50 border border-gold/25 rounded-full hover:border-gold/60 transition-colors duration-200 cursor-pointer group reveal delay-2">
+        <svg class="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+        </svg>
+        <div class="flex gap-1">
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <span class="font-display text-xl gold-text">4.8</span>
+        <span class="text-cream/55 text-sm font-body">· 245 Google recenzija</span>
+        <svg class="w-4 h-4 text-cream/35 group-hover:text-gold transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      </a>
     </div>
     <div id="reviews-slider" class="overflow-hidden">
     <div id="reviews-track" class="flex gap-5 transition-transform duration-500 ease-in-out">
@@ -1184,6 +1285,10 @@
 
 <!-- ═══════════════════════════════════════════════════ SCRIPTS ══ -->
 <script>
+  // Scroll to top on refresh
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
   // ── Hero title letter-by-letter animation
   (function() {
     const h1 = document.getElementById('hero-title');
@@ -1386,6 +1491,165 @@
       ? 'rgba(201,168,76,0.25)'
       : 'rgba(201,168,76,0.10)';
   }, { passive: true });
+
+  // ── Otvoreno / Zatvoreno sada
+  (function initOpenStatus() {
+    const now = new Date();
+    const day = now.getDay(); // 0=Sun, 1=Mon...6=Sat
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const timeVal = hour * 60 + min;
+
+    // Schedule: Fri(5) & Sat(6) close 22:00, others 21:00; all open 09:00
+    const closeMin = (day === 5 || day === 6) ? 22 * 60 : 21 * 60;
+    const openMin = 9 * 60;
+    const isOpen = timeVal >= openMin && timeVal < closeMin;
+    const closesAt = (day === 5 || day === 6) ? '22:00' : '21:00';
+
+    // Hero strip
+    const dot = document.getElementById('hero-status-dot');
+    const txt = document.getElementById('hero-status-text');
+    const hrs = document.getElementById('hero-status-hours');
+    if (dot && txt && hrs) {
+      if (isOpen) {
+        dot.style.background = '#4ade80';
+        dot.style.boxShadow = '0 0 6px rgba(74,222,128,0.8)';
+        txt.textContent = 'Otvoreno';
+        hrs.textContent = '· do ' + closesAt;
+      } else {
+        dot.style.background = '#f87171';
+        dot.style.boxShadow = '0 0 6px rgba(248,113,113,0.8)';
+        txt.textContent = 'Zatvoreno';
+        hrs.textContent = '· otvara se 09:00';
+      }
+    }
+
+    // O Nama badge
+    const badge = document.getElementById('onam-status-badge');
+    const bTxt = document.getElementById('onam-status-text');
+    const bHrs = document.getElementById('onam-status-hours');
+    if (badge && bTxt && bHrs) {
+      if (isOpen) {
+        badge.style.background = '#C9A84C';
+        bTxt.textContent = 'Otvoreno sada';
+        bHrs.textContent = '09:00 – ' + closesAt;
+      } else {
+        badge.style.background = '#2A1A10';
+        badge.style.border = '1px solid rgba(201,168,76,0.4)';
+        bTxt.style.color = '#C9A84C';
+        bHrs.style.color = 'rgba(245,237,216,0.7)';
+        bTxt.textContent = 'Zatvoreno';
+        bHrs.textContent = 'Otvara se 09:00';
+      }
+    }
+  })();
+
+  // ── Specijal dana — rotira se po danu u nedelji
+  (function initSpecijal() {
+    const specijali = [
+      { // Nedelja (0)
+        naziv: 'Doručak Specijalitet',
+        opis: 'Pržena jaja sa domaćom kobasicom, pečenim paradajzom, ćabata tostom i umakom od bosiljka. Savršen start nedeljnog jutra.',
+        cena: '750 RSD',
+        dan: 'Nedelja',
+        img: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80'
+      },
+      { // Ponedeljak (1)
+        naziv: 'Klasični Burger',
+        opis: 'Juneći pljeskavica od 200g, cheddar, karamelizovani luk, domaći umak, brioche lepinja. Servira se sa pomfritom i coleslaw.',
+        cena: '890 RSD',
+        dan: 'Ponedeljak',
+        img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80'
+      },
+      { // Utorak (2)
+        naziv: 'Losos Salata',
+        opis: 'Svež atlantski losos, avokado, miks zelene salate, bademi, cherry paradajz i vinaigrette od limuna. Lagano i ukusno.',
+        cena: '980 RSD',
+        dan: 'Utorak',
+        img: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80'
+      },
+      { // Sreda (3)
+        naziv: 'BBQ Rebarca',
+        opis: 'Svinjska rebarca marinirana 12 sati u domaćem BBQ sosu, pečena na roštilju. Servira se sa krompir vejesom i coleslaw.',
+        cena: '1.290 RSD',
+        dan: 'Sreda',
+        img: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80'
+      },
+      { // Četvrtak (4)
+        naziv: 'Pljeskavica u Ćabati',
+        opis: 'Mešana pljeskavica 300g sa kajmakom, ajvarom, lukom i svežim povrćem u hrskavoj ćabati. Pravi balkanski specijalitet.',
+        cena: '820 RSD',
+        dan: 'Četvrtak',
+        img: 'https://images.unsplash.com/photo-1553979459-d2229ba7433a?w=800&q=80'
+      },
+      { // Petak (5)
+        naziv: 'Losos Steak',
+        opis: 'File lososa sa kremastim umakom od kopra, pire krompir sa maslacem i sezonskim povrćem. Premium vikend specijalitet.',
+        cena: '1.150 RSD',
+        dan: 'Petak',
+        img: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800&q=80'
+      },
+      { // Subota (6)
+        naziv: 'Premium Plata',
+        opis: 'Mešana plata za dvoje: pileća krilca, rebarca, pljeskavica i ćevapi sa prilogom po izboru i domaćim sosovima.',
+        cena: '2.400 RSD',
+        dan: 'Subota',
+        img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80'
+      }
+    ];
+
+    const dan = new Date().getDay();
+    const s = specijali[dan];
+    const elNaziv = document.getElementById('specijal-naziv');
+    const elOpis = document.getElementById('specijal-opis');
+    const elCena = document.getElementById('specijal-cena');
+    const elDan = document.getElementById('specijal-dan');
+    const elImg = document.getElementById('specijal-img');
+    if (elNaziv) elNaziv.textContent = s.naziv;
+    if (elOpis) elOpis.textContent = s.opis;
+    if (elCena) elCena.textContent = s.cena;
+    if (elDan) elDan.textContent = s.dan;
+    if (elImg) { elImg.src = s.img; elImg.alt = s.naziv; }
+  })();
+
+  // ── Animated counters — triggered when element enters viewport
+  (function initCounters() {
+    const counters = document.querySelectorAll('.stat-counter');
+    if (!counters.length) return;
+
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const suffix = el.dataset.suffix || '';
+      const isThousands = el.dataset.format === 'thousands';
+      const duration = 1200;
+      const start = performance.now();
+
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
+        const current = Math.round(eased * target);
+        if (isThousands && current >= 1000) {
+          el.textContent = (current / 1000).toFixed(current % 1000 === 0 ? 0 : 1).replace('.', ',') + '.000' + suffix;
+        } else {
+          el.textContent = current + suffix;
+        }
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCounter(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(el => io.observe(el));
+  })();
 </script>
 
 </body>
