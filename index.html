@@ -1298,30 +1298,31 @@
   (function() {
     const track = document.getElementById('reviews-track');
     const dotsEl = document.getElementById('rev-dots');
+    const slider = document.getElementById('reviews-slider');
     const cards = Array.from(track.querySelectorAll('.review-card'));
-    const isMobile = window.innerWidth < 768;
-    const perPage = isMobile ? 1 : 3;
-
-    // na mobilnom kartica = puna širina slidera
-    if (isMobile) {
-      const sliderW = document.getElementById('reviews-slider').offsetWidth;
-      cards.forEach(c => { c.style.width = sliderW + 'px'; });
-    }
-
-    const total = Math.ceil(cards.length / perPage);
+    const total = cards.length;
     let current = 0;
 
-    for (let i = 0; i < total; i++) {
+    // kartica = puna širina slidera uvek
+    function setCardWidths() {
+      const w = slider.offsetWidth;
+      cards.forEach(c => { c.style.width = w + 'px'; });
+    }
+    setCardWidths();
+    window.addEventListener('resize', () => { setCardWidths(); go(current); });
+
+    // dots
+    cards.forEach((_, i) => {
       const d = document.createElement('button');
       d.style.cssText = 'height:8px;border-radius:9999px;transition:all 0.3s;cursor:pointer;border:none;background:' + (i === 0 ? '#C9A84C' : 'rgba(201,168,76,0.3)') + ';width:' + (i === 0 ? '20px' : '8px');
       d.addEventListener('click', () => go(i));
       dotsEl.appendChild(d);
-    }
+    });
 
     function go(n) {
       current = (n + total) % total;
-      const cardW = cards[0].offsetWidth + 20;
-      track.style.transform = `translateX(-${current * perPage * cardW}px)`;
+      const cardW = cards[0].offsetWidth + 20; // +20 = gap-5
+      track.style.transform = `translateX(-${current * cardW}px)`;
       dotsEl.querySelectorAll('button').forEach((d, i) => {
         d.style.background = i === current ? '#C9A84C' : 'rgba(201,168,76,0.3)';
         d.style.width = i === current ? '20px' : '8px';
