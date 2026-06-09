@@ -1212,9 +1212,11 @@
     h1.appendChild(l1);
 
     const l2 = document.createElement('span');
-    l2.className = 'gold-text';
     l2.style.display = 'block';
-    makeLetters(line2, line1.length + 1).forEach(s => l2.appendChild(s));
+    makeLetters(line2, line1.length + 1).forEach(s => {
+      s.className = 'hero-letter gold-text';
+      l2.appendChild(s);
+    });
     h1.appendChild(l2);
   })();
 
