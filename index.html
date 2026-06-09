@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bespravni Fakultet – Urbano gastronomsko iskustvo u Beogradu</title>
+  <meta name="description" content="Bespravni Fakultet – moderni urbani restoran na Bulevaru kralja Aleksandra 68, Beograd. Rezerviši sto, naruči dostavu, uživaj u hrani." />
+  <meta name="keywords" content="restoran Beograd, Bespravni Fakultet, urbani restoran, dostava Wolt, burgeri Beograd, rezervacija stola" />
+  <meta property="og:title" content="Bespravni Fakultet – Urbano gastronomsko iskustvo" />
+  <meta property="og:description" content="Kvalitetna hrana, opuštena atmosfera, centralna lokacija. Rezerviši sto ili naruči preko Wolta." />
+  <meta property="og:type" content="restaurant" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#C9A84C', light: '#E2C275', dark: '#A07830' },
+            charcoal: { DEFAULT: '#1A1410', light: '#2A2018', dark: '#0D0A07' },
+            wood: { DEFAULT: '#3D2B1F', light: '#5C3D2E', dark: '#2A1A10' },
+            cream: { DEFAULT: '#F5EDD8', muted: '#D9C9A8' },
+          },
+          fontFamily: {
+            display: ['"Playfair Display SC"', 'serif'],
+            body: ['Karla', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Karla', sans-serif; background: #1A1410; color: #F5EDD8; overflow-x: hidden; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* Hero parallax bg */
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(10,7,4,0.85) 0%, rgba(26,20,16,0.70) 50%, rgba(61,43,31,0.60) 100%),
+        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80') center/cover no-repeat fixed;
+    }
+
+    /* Gold gradient text */
+    .gold-text {
+      background: linear-gradient(135deg, #C9A84C 0%, #E2C275 50%, #A07830 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Section divider */
+    .divider { border-color: rgba(201,168,76,0.25); }
+
+    /* Card hover */
+    .menu-card { transition: transform 200ms ease, box-shadow 200ms ease; }
+    .menu-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(201,168,76,0.15); }
+
+    /* Wolt button */
+    .wolt-btn { background: linear-gradient(135deg, #009DE0, #0077B6); transition: filter 200ms ease, transform 200ms ease; }
+    .wolt-btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
+
+    /* Sticky reserve btn */
+    #sticky-cta { transition: opacity 200ms ease, transform 200ms ease; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 500ms ease, transform 500ms ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Gallery grid */
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    @media (max-width: 640px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Nav glass */
+    .nav-glass { background: rgba(13,10,7,0.80); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+    /* Form inputs */
+    .form-input {
+      background: rgba(42,32,24,0.8);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: #F5EDD8;
+      border-radius: 8px;
+      padding: 12px 16px;
+      width: 100%;
+      font-family: 'Karla', sans-serif;
+      font-size: 16px;
+      transition: border-color 200ms ease;
+      outline: none;
+    }
+    .form-input:focus { border-color: #C9A84C; box-shadow: 0 0 0 3px rgba(201,168,76,0.15); }
+    .form-input::placeholder { color: #9C8870; }
+
+    /* Review card */
+    .review-card { background: rgba(42,32,24,0.6); border: 1px solid rgba(201,168,76,0.2); backdrop-filter: blur(8px); }
+
+    /* Star */
+    .star { color: #C9A84C; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1410; }
+    ::-webkit-scrollbar-thumb { background: #5C3D2E; border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ NAV ══ -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="#hero" class="font-display text-lg text-gold tracking-wide cursor-pointer" aria-label="Bespravni Fakultet - početna">
+      Bespravni Fakultet
+    </a>
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex items-center gap-6 text-sm font-body font-medium text-cream/80">
+      <li><a href="#o-nama" class="hover:text-gold transition-colors duration-200 cursor-pointer">O nama</a></li>
+      <li><a href="#meni" class="hover:text-gold transition-colors duration-200 cursor-pointer">Meni</a></li>
+      <li><a href="#galerija" class="hover:text-gold transition-colors duration-200 cursor-pointer">Galerija</a></li>
+      <li><a href="#recenzije" class="hover:text-gold transition-colors duration-200 cursor-pointer">Recenzije</a></li>
+      <li><a href="#lokacija" class="hover:text-gold transition-colors duration-200 cursor-pointer">Lokacija</a></li>
+      <li>
+        <a href="#rezervacije"
+           class="bg-gold text-charcoal font-semibold px-4 py-2 rounded-lg hover:bg-gold-light transition-colors duration-200 cursor-pointer">
+          Rezerviši sto
+        </a>
+      </li>
+    </ul>
+    <!-- Mobile hamburger -->
+    <button id="menu-toggle" class="md:hidden text-cream/80 hover:text-gold transition-colors duration-200 cursor-pointer p-2" aria-label="Otvori meni" aria-expanded="false">
+      <svg id="icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-charcoal border-t border-gold/10">
+    <ul class="flex flex-col px-4 py-4 gap-3 text-base font-medium text-cream/80">
+      <li><a href="#o-nama" class="block py-2 hover:text-gold transition-colors duration-200 cursor-pointer" onclick="closeMobileMenu()">O nama</a></li>
+      <li><a href="#meni" class="block py-2 hover:text-gold transition-colors duration-200 cursor-pointer" onclick="closeMobileMenu()">Meni</a></li>
+      <li><a href="#galerija" class="block py-2 hover:text-gold transition-colors duration-200 cursor-pointer" onclick="closeMobileMenu()">Galerija</a></li>
+      <li><a href="#recenzije" class="block py-2 hover:text-gold transition-colors duration-200 cursor-pointer" onclick="closeMobileMenu()">Recenzije</a></li>
+      <li><a href="#lokacija" class="block py-2 hover:text-gold transition-colors duration-200 cursor-pointer" onclick="closeMobileMenu()">Lokacija</a></li>
+      <li>
+        <a href="#rezervacije" onclick="closeMobileMenu()"
+           class="block bg-gold text-charcoal font-semibold px-4 py-3 rounded-lg text-center cursor-pointer">
+          Rezerviši sto
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ HERO ══ -->
+<section id="hero" class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-4 pt-16 relative overflow-hidden">
+  <!-- Overlay vignette -->
+  <div class="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto">
+    <p class="text-gold text-sm font-body font-semibold tracking-[0.25em] uppercase mb-4 reveal">
+      Bulevar kralja Aleksandra 68, Beograd
+    </p>
+    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl text-cream leading-tight mb-6 reveal">
+      Bespravni<br/>
+      <span class="gold-text">Fakultet</span>
+    </h1>
+    <p class="text-cream/75 text-lg sm:text-xl font-body font-light leading-relaxed mb-10 reveal">
+      Urbano gastronomsko iskustvo<br class="hidden sm:block"/> u srcu Beograda
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal">
+      <!-- Pogledaj meni -->
+      <a href="#meni" class="w-full sm:w-auto bg-gold text-charcoal font-body font-semibold px-8 py-4 rounded-xl text-base hover:bg-gold-light transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Pogledaj meni
+      </a>
+      <!-- Rezerviši sto -->
+      <a href="#rezervacije" class="w-full sm:w-auto border border-gold/60 text-gold font-body font-semibold px-8 py-4 rounded-xl text-base hover:bg-gold/10 transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Rezerviši sto
+      </a>
+      <!-- Wolt -->
+      <a href="https://wolt.com" target="_blank" rel="noopener noreferrer"
+         class="wolt-btn w-full sm:w-auto text-white font-body font-semibold px-8 py-4 rounded-xl text-base cursor-pointer flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path fill="#009DE0" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" opacity="0"/><text x="4" y="16" font-size="9" font-family="Arial" font-weight="bold" fill="white">Wolt</text></svg>
+        Naruči preko Wolta
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/40 animate-bounce" aria-hidden="true">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ O NAMA ══ -->
+<section id="o-nama" class="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal-light relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,168,76,0.06),transparent_60%)]" aria-hidden="true"></div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Text -->
+      <div class="reveal">
+        <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Ko smo mi</p>
+        <h2 class="font-display text-4xl sm:text-5xl text-cream mb-6 leading-tight">
+          Više od<br/>
+          <span class="gold-text">restorana</span>
+        </h2>
+        <p class="text-cream/70 text-lg leading-relaxed mb-5">
+          Bespravni Fakultet je mesto gde se stiče znanje o dobrom ukusu. Smešten u srcu Beograda, naš restoran spaja modernu urbanu estetiku sa autentičnim domaćim ukusima.
+        </p>
+        <p class="text-cream/70 text-lg leading-relaxed mb-8">
+          Opuštena atmosfera, pažljivo odabrani sastojci i strast prema kvalitetu — to su predmeti koje predajemo svakom gostu koji zakorači kroz naša vrata.
+        </p>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="text-center p-4 rounded-xl border border-gold/20 bg-wood/30">
+            <p class="font-display text-3xl gold-text mb-1">7+</p>
+            <p class="text-cream/60 text-sm font-body">godina iskustva</p>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-gold/20 bg-wood/30">
+            <p class="font-display text-3xl gold-text mb-1">1.000</p>
+            <p class="text-cream/60 text-sm font-body">zadovoljnih gostiju</p>
+          </div>
+          <div class="text-center p-4 rounded-xl border border-gold/20 bg-wood/30">
+            <p class="font-display text-3xl gold-text mb-1">50+</p>
+            <p class="text-cream/60 text-sm font-body">jela u ponudi</p>
+          </div>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="reveal relative">
+        <div class="rounded-2xl overflow-hidden aspect-[4/5]">
+          <img
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
+            alt="Enterijer restorana Bespravni Fakultet – topla i moderna atmosfera"
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <!-- Badge -->
+        <div class="absolute -bottom-4 -left-4 bg-gold text-charcoal rounded-xl px-5 py-4 shadow-2xl">
+          <p class="font-display text-sm font-bold">Otvoreno danas</p>
+          <p class="font-body text-xs font-semibold mt-0.5">09:00 – 21:00</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ MENI ══ -->
+<section id="meni" class="py-24 px-4 sm:px-6 lg:px-8" style="background: #120E0B;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Šta nudimo</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream mb-4">Naš meni</h2>
+      <p class="text-cream/60 text-lg max-w-xl mx-auto">Svako jelo je priča za sebe — od lokalnih sastojaka do modernih tehnika pripreme.</p>
+    </div>
+
+    <!-- Tab navigation -->
+    <div class="flex flex-wrap justify-center gap-2 mb-10" role="tablist" aria-label="Kategorije menija">
+      <button role="tab" aria-selected="true" aria-controls="tab-predjela" data-tab="predjela"
+        class="menu-tab active-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer bg-gold text-charcoal">
+        Predjela
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-glavna" data-tab="glavna"
+        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Glavna jela
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-burgeri" data-tab="burgeri"
+        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Burgeri &amp; roštilj
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-pica" data-tab="pica"
+        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Pića
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-deserti" data-tab="deserti"
+        class="menu-tab font-body font-semibold px-5 py-2.5 rounded-lg text-sm transition-all duration-200 cursor-pointer text-cream/60 border border-gold/20 hover:border-gold/50 hover:text-cream">
+        Deserti
+      </button>
+    </div>
+
+    <!-- Tab content panels -->
+    <div id="tab-predjela" role="tabpanel" class="menu-panel grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Bruschetta sa paradajzom</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Hrskavi tost, sveži paradajz, bosiljak i maslinovo ulje</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Čorba dana</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">450 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Sezonska domaća čorba sa svežim povrćem i začinima</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Kalamari sa roštilja</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">850 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Mediteranski kalamari sa limunom i aioli sosom</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Mešano predjelo</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">950 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Selekcija domaćih sireva, pršute i kiselih krastavaca</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Goveđi tartare</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Svežo mlevena junetina, kapari, senf i tost</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Supa od bundeve</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">500 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Kremasta supa sa đumbirom, kokosovim mlekom i semenkama</p>
+      </div>
+    </div>
+
+    <div id="tab-glavna" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Ramstek sa povrćem</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.450 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Sočni komad junećeg mesa sa sezonskim povrćem</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Piletina u sosu od limuna</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Pečena piletina sa kremastim sosom od limuna i kaparima</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Pasta truffle</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.250 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Sveža pasta sa kremom od tartufa i parmezanom</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Losos sa špinatom</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.400 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Norweski losos na roštilju sa glaziranim špinatom</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Rizoto sa plodovima mora</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.350 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Kremasti rizoto sa škampima, dagnjama i školjkama</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Vegetarijanska tanjir</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">950 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Sezonsko povrće, hummus, falafel i grillovani halloumi</p>
+      </div>
+    </div>
+
+    <div id="tab-burgeri" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">BF Classic Burger</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.200 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">200g junetine, čedar, karamela luk, smokey sos, brioche</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Double Truffle</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.500 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Dupla pljeskavica, sos od tartufa, gurmanski sir, rukola</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Pileći crispy burger</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.050 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Pohana piletina, coleslaw, jalapeno, honey-mustard sos</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Ćevapi sa kajmakom</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">900 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">10 komada, domaći kajmak, luk i somun</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Mešano sa roštilja</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.400 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Vešalica, pljeskavica, rolovani ćevapi, prilog</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Vegan Burger</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">1.100 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Biljni burger, avokado, svež paradajz, vegan sos</p>
+      </div>
+    </div>
+
+    <div id="tab-pica" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Domaća limonada</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">350 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Svežo ceđeni limun, menta, med – 0.5L</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Domaće pivo</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">300 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Toceno craft pivo iz beogradske pivare – 0.5L</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Espresso / Cappuccino</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">180 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Specialty kafa od single origin zrna</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Fresh sokovi</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">380 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Miks od sezonskog voća – narandža, šargarepa, jabuka</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Vino – čaša</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">350 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Selekcija domaćih i uvoznih vina, belo i crveno</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Smoothie bowl</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Mango, banana, bobičasto voće, granola i chia semenke</p>
+      </div>
+    </div>
+
+    <div id="tab-deserti" role="tabpanel" class="menu-panel hidden grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Fondant od čokolade</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">680 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Topli čokoladni fondant sa sladoledom od vanile</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Cheesecake</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">600 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Njujorški cheesecake sa preliv od sezonskog voća</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Tiramisu</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">620 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Klasični tiramisu po originalnoj recepturi</p>
+      </div>
+      <div class="menu-card bg-wood/40 border border-gold/15 rounded-2xl p-5 cursor-default">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="font-display text-base text-cream">Panna cotta</h3>
+          <span class="text-gold font-semibold font-body text-sm whitespace-nowrap ml-3">550 RSD</span>
+        </div>
+        <p class="text-cream/55 text-sm leading-relaxed">Kremasta panna cotta sa sosom od maline</p>
+      </div>
+    </div>
+
+    <p class="text-center text-cream/40 text-sm mt-10 font-body">Cene su iskazane u RSD sa uračunatim PDV-om. Alergeni dostupni na zahtev.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ GALERIJA ══ -->
+<section id="galerija" class="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Atmosfera</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">Galerija</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="rounded-xl overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Jelo u Bespravni Fakultet restoranu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="rounded-xl overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Enterijer restorana Bespravni Fakultet" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="rounded-xl overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Detalj hrane – premium jelo" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="rounded-xl overflow-hidden aspect-square">
+        <img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80" alt="Burger iz Bespravni Fakultet" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="rounded-xl overflow-hidden aspect-square col-span-2 sm:col-span-1">
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80" alt="Kafeterija i bar u restoranu" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+      <div class="rounded-xl overflow-hidden aspect-square hidden sm:block">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80" alt="Deserti – slatko u restoranu Bespravni Fakultet" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500 cursor-pointer" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ REZERVACIJE ══ -->
+<section id="rezervacije" class="py-24 px-4 sm:px-6 lg:px-8" style="background: #120E0B;">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Info side -->
+      <div class="reveal">
+        <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Dođi kod nas</p>
+        <h2 class="font-display text-4xl sm:text-5xl text-cream mb-6">Rezerviši<br/>sto</h2>
+        <p class="text-cream/65 text-lg leading-relaxed mb-8">
+          Popuni formu ili nam pošalji poruku direktno na WhatsApp — odgovaramo brzo!
+        </p>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/381614149733?text=Zdravo%2C%20zelim%20da%20rezervisem%20sto%20u%20Bespravni%20Fakultet"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-3 bg-[#25D366] text-white font-semibold px-6 py-4 rounded-xl hover:brightness-110 transition-all duration-200 cursor-pointer mb-8">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Rezerviši na WhatsApp
+        </a>
+        <!-- Contact info -->
+        <div class="space-y-3 text-cream/60 text-sm font-body">
+          <div class="flex items-center gap-3">
+            <svg class="w-4 h-4 text-gold flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+381614149733" class="hover:text-gold transition-colors duration-200 cursor-pointer">061 4149733</a>
+          </div>
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-gold flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Bulevar kralja Aleksandra 68, Beograd</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="reveal">
+        <form id="reservation-form" class="bg-wood/30 border border-gold/15 rounded-2xl p-6 sm:p-8 space-y-5" novalidate>
+          <div>
+            <label for="ime" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Ime i prezime</label>
+            <input type="text" id="ime" name="ime" required autocomplete="name" placeholder="Vaše ime" class="form-input" />
+          </div>
+          <div>
+            <label for="telefon" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Telefon</label>
+            <input type="tel" id="telefon" name="telefon" required autocomplete="tel" placeholder="+381 6X XXX XXXX" class="form-input" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="datum" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Datum</label>
+              <input type="date" id="datum" name="datum" required class="form-input" />
+            </div>
+            <div>
+              <label for="vreme" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Vreme</label>
+              <input type="time" id="vreme" name="vreme" required min="09:00" max="21:00" class="form-input" />
+            </div>
+          </div>
+          <div>
+            <label for="gosti" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Broj gostiju</label>
+            <select id="gosti" name="gosti" required class="form-input cursor-pointer">
+              <option value="" disabled selected>Izaberi broj gostiju</option>
+              <option value="1">1 osoba</option>
+              <option value="2">2 osobe</option>
+              <option value="3">3 osobe</option>
+              <option value="4">4 osobe</option>
+              <option value="5">5 osoba</option>
+              <option value="6">6 osoba</option>
+              <option value="7+">7+ osoba (grupna rezervacija)</option>
+            </select>
+          </div>
+          <div>
+            <label for="napomena" class="block text-sm font-semibold text-cream/80 mb-2 font-body">Napomena (opciono)</label>
+            <textarea id="napomena" name="napomena" rows="3" placeholder="Posebne želje, alergije..." class="form-input resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-gold text-charcoal font-semibold font-body text-base py-4 rounded-xl hover:bg-gold-light transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Potvrdi rezervaciju
+          </button>
+          <div id="form-msg" class="hidden text-center text-sm font-body py-2 rounded-lg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ DOSTAVA ══ -->
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-charcoal overflow-hidden relative">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,157,224,0.06),transparent_60%)]" aria-hidden="true"></div>
+  <div class="max-w-4xl mx-auto text-center relative reveal">
+    <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Dostava do tvoje adrese</p>
+    <h2 class="font-display text-4xl sm:text-5xl text-cream mb-5">
+      Naruči brzo i<br/>
+      <span class="gold-text">jednostavno</span>
+    </h2>
+    <p class="text-cream/65 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+      Bespravni Fakultet je dostupan na Wolt platformi. Tvoja omiljena jela stižu direktno na tvoju adresu — brzo, toplo, tačno.
+    </p>
+    <a href="https://wolt.com" target="_blank" rel="noopener noreferrer"
+       class="wolt-btn inline-flex items-center gap-3 text-white font-semibold font-body text-lg px-10 py-5 rounded-2xl cursor-pointer">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      Naruči na Wolt
+    </a>
+    <!-- Features -->
+    <div class="grid grid-cols-3 gap-4 mt-12 max-w-lg mx-auto">
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-[#009DE0]/15 flex items-center justify-center mx-auto mb-2">
+          <svg class="w-6 h-6 text-[#009DE0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <p class="text-cream/70 text-sm font-body">Brza dostava</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-[#009DE0]/15 flex items-center justify-center mx-auto mb-2">
+          <svg class="w-6 h-6 text-[#009DE0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        </div>
+        <p class="text-cream/70 text-sm font-body">Sveže i toplo</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 rounded-full bg-[#009DE0]/15 flex items-center justify-center mx-auto mb-2">
+          <svg class="w-6 h-6 text-[#009DE0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <p class="text-cream/70 text-sm font-body">Online plaćanje</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ RECENZIJE ══ -->
+<section id="recenzije" class="py-24 px-4 sm:px-6 lg:px-8" style="background: #120E0B;">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14 reveal">
+      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Šta kažu gosti</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">Recenzije</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 reveal">
+      <!-- Review 1 -->
+      <div class="review-card rounded-2xl p-6">
+        <div class="flex gap-1 mb-4" aria-label="Ocena: 5 od 5 zvezda">
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-cream/80 text-base leading-relaxed mb-5 font-body italic">"Odlično mesto za druženje i hranu. Atmosfera je savršena — opušteno ali ipak premium. Svakako se vraćam."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center">
+            <span class="text-gold font-semibold text-sm font-body">M</span>
+          </div>
+          <div>
+            <p class="text-cream font-semibold text-sm font-body">Marko T.</p>
+            <p class="text-cream/40 text-xs font-body">Beograd</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card rounded-2xl p-6">
+        <div class="flex gap-1 mb-4" aria-label="Ocena: 5 od 5 zvezda">
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-cream/80 text-base leading-relaxed mb-5 font-body italic">"Super atmosfera i korektne cene. Burger je bio fantastičan, a osoblje veoma ljubazno. Topla preporuka svima!"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center">
+            <span class="text-gold font-semibold text-sm font-body">J</span>
+          </div>
+          <div>
+            <p class="text-cream font-semibold text-sm font-body">Jana K.</p>
+            <p class="text-cream/40 text-xs font-body">Beograd</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card rounded-2xl p-6">
+        <div class="flex gap-1 mb-4" aria-label="Ocena: 5 od 5 zvezda">
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <svg class="w-4 h-4 star" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        </div>
+        <p class="text-cream/80 text-base leading-relaxed mb-5 font-body italic">"Jedan od boljih urbanih restorana u Beogradu. Hrana je konzistentno dobra, a meni se često menja. Dolazim skoro svake nedelje."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center">
+            <span class="text-gold font-semibold text-sm font-body">S</span>
+          </div>
+          <div>
+            <p class="text-cream font-semibold text-sm font-body">Stefan N.</p>
+            <p class="text-cream/40 text-xs font-body">Novi Sad</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ LOKACIJA ══ -->
+<section id="lokacija" class="py-24 px-4 sm:px-6 lg:px-8 bg-charcoal">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="text-gold text-sm font-semibold tracking-[0.2em] uppercase mb-3">Gde smo</p>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream mb-4">Lokacija</h2>
+      <p class="text-cream/60 text-lg">Lako dostupno, centralna lokacija u Beogradu</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 mb-8 reveal">
+      <div class="bg-wood/30 border border-gold/15 rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <p class="text-cream font-semibold font-body mb-1">Adresa</p>
+          <p class="text-cream/60 text-sm font-body">Bulevar kralja Aleksandra 68<br/>11000 Beograd</p>
+        </div>
+      </div>
+      <div class="bg-wood/30 border border-gold/15 rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </div>
+        <div>
+          <p class="text-cream font-semibold font-body mb-1">Telefon</p>
+          <a href="tel:+381614149733" class="text-cream/60 text-sm font-body hover:text-gold transition-colors duration-200 cursor-pointer">061 4149733</a>
+        </div>
+      </div>
+      <div class="bg-wood/30 border border-gold/15 rounded-2xl p-6 flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 flex items-center justify-center flex-shrink-0">
+          <svg class="w-5 h-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <p class="text-cream font-semibold font-body mb-1">Radno vreme</p>
+          <p class="text-cream/60 text-sm font-body">Pon–Čet, Ned: 09–21h<br/>Pet–Sub: 09–22h</p>
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <div class="rounded-2xl overflow-hidden reveal" style="height: 400px;">
+      <iframe
+        title="Lokacija restorana Bespravni Fakultet na Google Maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.6890936505!2d20.479!3d44.807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475a7ab70cf58019%3A0x89d72fa2d1c0da3a!2sBulevar%20kralja%20Aleksandra%2068%2C%20Beograd!5e0!3m2!1ssr!2srs!4v1699000000000!5m2!1ssr!2srs"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ FOOTER ══ -->
+<footer class="bg-charcoal-dark border-t border-gold/15 py-16 px-4 sm:px-6 lg:px-8" style="background: #0D0A07;">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-10 mb-12">
+      <!-- Brand -->
+      <div>
+        <p class="font-display text-2xl gold-text mb-3">Bespravni Fakultet</p>
+        <p class="text-cream/50 text-sm leading-relaxed font-body">
+          Urbano gastronomsko iskustvo u srcu Beograda. Kvalitetna hrana, odlična atmosfera, centralna lokacija.
+        </p>
+      </div>
+
+      <!-- Radno vreme -->
+      <div>
+        <h3 class="text-cream font-semibold font-body mb-4 text-sm tracking-wide uppercase">Radno vreme</h3>
+        <ul class="space-y-1.5 text-sm font-body">
+          <li class="flex justify-between text-cream/60"><span>Ponedeljak</span><span>09:00 – 21:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Utorak</span><span>09:00 – 21:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Sreda</span><span>09:00 – 21:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Četvrtak</span><span>09:00 – 21:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Petak</span><span class="text-gold font-medium">09:00 – 22:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Subota</span><span class="text-gold font-medium">09:00 – 22:00</span></li>
+          <li class="flex justify-between text-cream/60"><span>Nedelja</span><span>09:00 – 21:00</span></li>
+        </ul>
+      </div>
+
+      <!-- Kontakt & Social -->
+      <div>
+        <h3 class="text-cream font-semibold font-body mb-4 text-sm tracking-wide uppercase">Kontakt</h3>
+        <ul class="space-y-3 text-sm font-body text-cream/60 mb-6">
+          <li>
+            <a href="tel:+381614149733" class="flex items-center gap-2 hover:text-gold transition-colors duration-200 cursor-pointer">
+              <svg class="w-4 h-4 flex-shrink-0 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              061 4149733
+            </a>
+          </li>
+          <li class="flex items-start gap-2">
+            <svg class="w-4 h-4 flex-shrink-0 text-gold mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+            Bulevar kralja Aleksandra 68, Beograd
+          </li>
+        </ul>
+        <!-- Social links -->
+        <div class="flex gap-3">
+          <a href="#" aria-label="Instagram – Bespravni Fakultet" class="w-10 h-10 rounded-xl bg-wood/60 border border-gold/15 flex items-center justify-center hover:border-gold/50 hover:bg-gold/10 transition-all duration-200 cursor-pointer">
+            <svg class="w-5 h-5 text-cream/70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok – Bespravni Fakultet" class="w-10 h-10 rounded-xl bg-wood/60 border border-gold/15 flex items-center justify-center hover:border-gold/50 hover:bg-gold/10 transition-all duration-200 cursor-pointer">
+            <svg class="w-5 h-5 text-cream/70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.73a4.85 4.85 0 01-1.01-.04z"/></svg>
+          </a>
+          <a href="https://wa.me/381614149733" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp – Bespravni Fakultet" class="w-10 h-10 rounded-xl bg-wood/60 border border-gold/15 flex items-center justify-center hover:border-gold/50 hover:bg-gold/10 transition-all duration-200 cursor-pointer">
+            <svg class="w-5 h-5 text-cream/70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider border-t mb-8" />
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-cream/30 text-sm font-body">
+      <p>&copy; 2025 Bespravni Fakultet. Sva prava zadržana.</p>
+      <p>Bulevar kralja Aleksandra 68, Beograd &middot; 061 4149733</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════ STICKY CTA ══ -->
+<div id="sticky-cta" class="fixed bottom-6 right-4 sm:right-6 z-40 flex flex-col gap-3 opacity-0 translate-y-4 pointer-events-none" aria-label="Brze akcije">
+  <a href="#rezervacije"
+     class="bg-gold text-charcoal font-semibold font-body text-sm px-5 py-3 rounded-xl shadow-2xl hover:bg-gold-light transition-colors duration-200 cursor-pointer flex items-center gap-2 whitespace-nowrap">
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+    Rezerviši sto
+  </a>
+  <a href="https://wa.me/381614149733" target="_blank" rel="noopener noreferrer"
+     class="bg-[#25D366] text-white font-semibold font-body text-sm px-5 py-3 rounded-xl shadow-2xl hover:brightness-110 transition-all duration-200 cursor-pointer flex items-center gap-2 whitespace-nowrap">
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ SCRIPTS ══ -->
+<script>
+  // ── Sticky CTA show/hide
+  const stickyCta = document.getElementById('sticky-cta');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      stickyCta.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    } else {
+      stickyCta.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    }
+  }, { passive: true });
+
+  // ── Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // ── Mobile nav toggle
+  const toggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    iconOpen.classList.toggle('hidden', !isOpen);
+    iconClose.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  function closeMobileMenu() {
+    mobileMenu.classList.add('hidden');
+    iconOpen.classList.remove('hidden');
+    iconClose.classList.add('hidden');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // ── Menu tabs
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => {
+        const active = t.dataset.tab === target;
+        t.setAttribute('aria-selected', String(active));
+        t.classList.toggle('bg-gold', active);
+        t.classList.toggle('text-charcoal', active);
+        t.classList.toggle('text-cream/60', !active);
+        t.classList.toggle('border', !active);
+        t.classList.toggle('border-gold/20', !active);
+        if (active) { t.classList.remove('text-cream/60', 'border', 'border-gold/20'); }
+      });
+      panels.forEach(p => {
+        p.classList.toggle('hidden', p.id !== `tab-${target}`);
+      });
+    });
+  });
+
+  // ── Reservation form
+  const form = document.getElementById('reservation-form');
+  const formMsg = document.getElementById('form-msg');
+
+  // Set min date to today
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('datum').setAttribute('min', today);
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ime = document.getElementById('ime').value.trim();
+    const telefon = document.getElementById('telefon').value.trim();
+    const datum = document.getElementById('datum').value;
+    const vreme = document.getElementById('vreme').value;
+    const gosti = document.getElementById('gosti').value;
+    const napomena = document.getElementById('napomena').value.trim();
+
+    if (!ime || !telefon || !datum || !vreme || !gosti) {
+      formMsg.textContent = 'Molimo popunite sva obavezna polja.';
+      formMsg.className = 'text-center text-sm font-body py-2 rounded-lg bg-red-900/30 text-red-300';
+      formMsg.classList.remove('hidden');
+      return;
+    }
+
+    // Build WhatsApp message
+    const msg = encodeURIComponent(
+      `Zdravo! Zelim da rezervisem sto.\n\nIme: ${ime}\nTelefon: ${telefon}\nDatum: ${datum}\nVreme: ${vreme}\nBroj gostiju: ${gosti}${napomena ? '\nNapomena: ' + napomena : ''}`
+    );
+    window.open(`https://wa.me/381614149733?text=${msg}`, '_blank');
+
+    formMsg.textContent = 'Hvala! Preusmeren/a si na WhatsApp za potvrdu rezervacije.';
+    formMsg.className = 'text-center text-sm font-body py-2 rounded-lg bg-green-900/30 text-green-300';
+    formMsg.classList.remove('hidden');
+    form.reset();
+  });
+
+  // ── Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.borderBottomColor = window.scrollY > 50
+      ? 'rgba(201,168,76,0.25)'
+      : 'rgba(201,168,76,0.10)';
+  }, { passive: true });
+</script>
+
+</body>
+</html>
