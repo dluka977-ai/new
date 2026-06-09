@@ -1208,7 +1208,10 @@
 
     const l1 = document.createElement('span');
     l1.style.display = 'block';
-    makeLetters(line1, 0).forEach(s => l1.appendChild(s));
+    makeLetters(line1, 0).forEach(s => {
+      s.className = 'hero-letter gold-text';
+      l1.appendChild(s);
+    });
     h1.appendChild(l1);
 
     const l2 = document.createElement('span');
