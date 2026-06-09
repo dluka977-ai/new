@@ -33,7 +33,7 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
     body { font-family: 'Karla', sans-serif; background: #1A1410; color: #F5EDD8; overflow-x: hidden; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -70,10 +70,10 @@
       background-size: 200px 200px;
     }
 
-    /* ── HERO BG ── */
+    /* Hero parallax bg */
     .hero-bg {
-      background: linear-gradient(135deg, rgba(10,7,4,0.88) 0%, rgba(26,20,16,0.72) 50%, rgba(61,43,31,0.62) 100%),
-        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80') center/cover no-repeat fixed;
+      background: linear-gradient(to bottom, rgba(10,7,4,0.55) 0%, rgba(13,10,7,0.40) 40%, rgba(13,10,7,0.82) 100%),
+        url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85') center 60%/cover no-repeat;
     }
 
     /* ── GOLD TEXT ── */
@@ -217,7 +217,7 @@
 <!-- ═══════════════════════════════════════════════════ NAV ══ -->
 <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-glass">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="#hero" class="font-display text-lg text-gold tracking-wide cursor-pointer" aria-label="Bespravni Fakultet - početna">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" class="font-display text-lg text-gold tracking-wide cursor-pointer" aria-label="Bespravni Fakultet - početna">
       Bespravni Fakultet
     </a>
     <!-- Desktop nav -->
@@ -277,19 +277,15 @@
       Urbano gastronomsko iskustvo<br class="hidden sm:block"/> u srcu Beograda
     </p>
 
-    <div class="hero-btns flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#meni" class="gold-btn w-full sm:w-auto bg-gold text-charcoal font-body font-semibold px-8 py-4 rounded-xl text-base cursor-pointer flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-        Pogledaj meni
-      </a>
-      <a href="#rezervacije" class="w-full sm:w-auto border border-gold/60 text-gold font-body font-semibold px-8 py-4 rounded-xl text-base hover:bg-gold/10 hover:border-gold transition-all duration-200 cursor-pointer flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        Rezerviši sto
+    <div class="hero-btns flex flex-row items-center justify-center gap-3">
+      <a href="#meni" class="gold-btn bg-gold text-charcoal font-body font-semibold px-5 py-2.5 rounded-lg text-sm cursor-pointer flex items-center justify-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Meni
       </a>
       <a href="https://wolt.com/sr/srb/belgrade/restaurant/bespravni-facultet?utm_source=googlemapreserved&utm_campaign=bespravni-facultet&utm_content=6a0330ab7a2a67660c5d3f51&category=restaurant&rwg_token=AFd1xnHAAvKxnTT2YyJmCOb-OC1WxB-OhMiOmYJAWy_UqosGqyrCh8iPQz6o885EZZbPqu0r7im9yJOIdq3fkRvOSwKB72sWdcUP52_DXQ7ePSh9hc-l6kM%3D" target="_blank" rel="noopener noreferrer"
-         class="wolt-btn w-full sm:w-auto text-white font-body font-semibold px-8 py-4 rounded-xl text-base cursor-pointer flex items-center justify-center gap-2">
-        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
-        Naruči preko Wolta
+         class="wolt-btn text-white font-body font-semibold px-5 py-2.5 rounded-lg text-sm cursor-pointer flex items-center justify-center gap-1.5">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
+        Naruči na Wolt
       </a>
     </div>
   </div>
