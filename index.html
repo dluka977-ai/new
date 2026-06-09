@@ -158,11 +158,19 @@
     @keyframes lineGrow     { from{width:0} to{width:100%} }
     @keyframes countUp      { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
 
-    .hero-tag   { animation: heroFadeUp  0.8s ease 0.15s both; }
-    .hero-h1    { animation: blurReveal  1.0s ease 0.30s both; }
-    .hero-sub   { animation: heroFadeUp  0.8s ease 0.55s both; }
-    .hero-btns  { animation: heroFadeUp  0.8s ease 0.70s both; }
-    .hero-scroll{ animation: heroFadeIn  0.8s ease 0.85s both, floatY 2.5s ease-in-out 2s infinite; }
+    .hero-tag   { animation: heroFadeUp 0.8s ease 0.15s both; }
+    .hero-sub   { animation: heroFadeUp 0.8s ease 0.55s both; }
+    .hero-btns  { animation: heroFadeUp 0.8s ease 0.70s both; }
+    .hero-scroll{ animation: heroFadeIn 0.8s ease 0.85s both, floatY 2.5s ease-in-out 2s infinite; }
+
+    /* per-letter animation */
+    .hero-letter {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: heroFadeUp 0.5s ease forwards;
+    }
+    .hero-letter-space { display: inline-block; width: 0.3em; }
 
     /* animated gold divider line */
     .gold-line { display:block; height:1px; background:linear-gradient(90deg,transparent,#C9A84C,transparent); animation: lineGrow 1s ease 0.5s both; }
@@ -296,7 +304,7 @@
 
   <div class="relative z-10 max-w-3xl mx-auto">
     <span class="hero-tag section-badge">Bulevar kralja Aleksandra 68, Beograd</span>
-    <h1 class="hero-h1 font-display text-5xl sm:text-6xl md:text-7xl text-cream leading-tight mb-4">
+    <h1 id="hero-title" class="font-display text-5xl sm:text-6xl md:text-7xl text-cream leading-tight mb-4" style="opacity:0">
       Bespravni<br/>
       <span class="gold-text">Fakultet</span>
     </h1>
@@ -1176,6 +1184,40 @@
 
 <!-- ═══════════════════════════════════════════════════ SCRIPTS ══ -->
 <script>
+  // ── Hero title letter-by-letter animation
+  (function() {
+    const h1 = document.getElementById('hero-title');
+    if (!h1) return;
+    const line1 = 'Bespravni';
+    const line2 = 'Fakultet';
+    const baseDelay = 0.3;
+    const step = 0.055;
+
+    function makeLetters(word, startIdx) {
+      return word.split('').map((ch, i) => {
+        const s = document.createElement('span');
+        s.className = 'hero-letter';
+        s.style.animationDelay = (baseDelay + (startIdx + i) * step) + 's';
+        s.textContent = ch;
+        return s;
+      });
+    }
+
+    h1.innerHTML = '';
+    h1.style.opacity = '1';
+
+    const l1 = document.createElement('span');
+    l1.style.display = 'block';
+    makeLetters(line1, 0).forEach(s => l1.appendChild(s));
+    h1.appendChild(l1);
+
+    const l2 = document.createElement('span');
+    l2.className = 'gold-text';
+    l2.style.display = 'block';
+    makeLetters(line2, line1.length + 1).forEach(s => l2.appendChild(s));
+    h1.appendChild(l2);
+  })();
+
   // ── Sticky CTA show/hide
   const stickyCta = document.getElementById('sticky-cta');
   window.addEventListener('scroll', () => {
