@@ -33,8 +33,8 @@
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 64px; }
-    body { font-family: 'Karla', sans-serif; background: #1A1410; color: #F5EDD8; overflow-x: hidden; }
+    html { scroll-behavior: smooth; scroll-padding-top: 64px; overflow-x: hidden; }
+    body { font-family: 'Karla', sans-serif; background: #1A1410; color: #F5EDD8; overflow-x: hidden; max-width: 100vw; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -186,6 +186,7 @@
     .orb {
       position:absolute; border-radius:50%; pointer-events:none; filter:blur(80px);
       animation: floatY 6s ease-in-out infinite;
+      max-width: 50vw;
     }
 
     /* ── HORIZONTAL SCROLL MENU TABS ── */
@@ -283,7 +284,7 @@
         Meni
       </a>
       <a href="https://wolt.com/sr/srb/belgrade/restaurant/bespravni-facultet?utm_source=googlemapreserved&utm_campaign=bespravni-facultet&utm_content=6a0330ab7a2a67660c5d3f51&category=restaurant&rwg_token=AFd1xnHAAvKxnTT2YyJmCOb-OC1WxB-OhMiOmYJAWy_UqosGqyrCh8iPQz6o885EZZbPqu0r7im9yJOIdq3fkRvOSwKB72sWdcUP52_DXQ7ePSh9hc-l6kM%3D" target="_blank" rel="noopener noreferrer"
-         class="wolt-btn text-white font-body font-semibold px-5 py-2.5 rounded-lg text-sm cursor-pointer flex items-center justify-center gap-1.5">
+         class="gold-btn bg-gold text-charcoal font-body font-semibold px-5 py-2.5 rounded-lg text-sm cursor-pointer flex items-center justify-center gap-1.5">
         <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12l2 2 4-4"/></svg>
         Naruči na Wolt
       </a>
