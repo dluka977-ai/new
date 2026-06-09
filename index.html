@@ -109,19 +109,19 @@
     #sticky-cta { transition: opacity 300ms ease, transform 300ms ease; }
 
     /* ── SCROLL REVEAL variants ── */
-    .reveal        { opacity: 0; transform: translateY(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-left   { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-right  { opacity: 0; transform: translateX(40px);  transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal-scale  { opacity: 0; transform: scale(0.95) translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal        { opacity: 0; transform: translateY(40px);  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; transition-delay: 0.3s; }
+    .reveal-left   { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; transition-delay: 0.3s; }
+    .reveal-right  { opacity: 0; transform: translateX(40px);  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; transition-delay: 0.3s; }
+    .reveal-scale  { opacity: 0; transform: scale(0.95) translateY(20px); transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out; transition-delay: 0.3s; }
     .reveal.visible, .reveal-left.visible, .reveal-right.visible, .reveal-scale.visible
                    { opacity: 1; transform: none; }
 
-    /* stagger delays */
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
+    /* stagger delays — dodaju se na base delay od 0.3s */
+    .delay-1 { transition-delay: 0.4s; }
+    .delay-2 { transition-delay: 0.5s; }
+    .delay-3 { transition-delay: 0.6s; }
+    .delay-4 { transition-delay: 0.7s; }
+    .delay-5 { transition-delay: 0.8s; }
 
     /* ── HERO ANIMATIONS ── */
     @keyframes heroFadeUp   { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:none; } }
