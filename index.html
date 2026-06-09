@@ -76,56 +76,29 @@
         url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85') center 60%/cover no-repeat;
     }
     .hero-bg-img {
-      position: absolute; inset: -10%; z-index: 0;
+      position: absolute; inset: -5%; z-index: 0;
       background: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=1400&q=85') center 60%/cover no-repeat;
-      animation: kenBurns 22s ease-in-out infinite alternate;
+      animation: kenBurns 20s ease-in-out infinite alternate;
       will-change: transform;
     }
     .hero-bg-overlay {
       position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to bottom, rgba(10,7,4,0.50) 0%, rgba(13,10,7,0.30) 40%, rgba(13,10,7,0.88) 100%);
+      background: linear-gradient(to bottom, rgba(10,7,4,0.55) 0%, rgba(13,10,7,0.38) 40%, rgba(13,10,7,0.90) 100%);
     }
     @keyframes kenBurns {
-      from { transform: scale(1) translate(0, 0); }
-      to   { transform: scale(1.10) translate(-1%, 1%); }
+      from { transform: scale(1); }
+      to   { transform: scale(1.06); }
     }
 
-    /* Cursor spotlight */
-    #hero { --mx: 50%; --my: 50%; }
-    #hero::before {
-      content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none;
-      background: radial-gradient(700px circle at var(--mx) var(--my), rgba(201,168,76,0.07), transparent 55%);
-      transition: background 0.1s;
-    }
-
-    /* Floating particles */
-    .particle {
-      position: absolute; border-radius: 50%; pointer-events: none; z-index: 2;
-      background: rgba(201,168,76,0.6);
-      animation: floatParticle var(--dur) ease-in-out var(--delay) infinite;
-    }
-    @keyframes floatParticle {
-      0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
-      15%  { opacity: 1; }
-      85%  { opacity: 0.4; }
-      100% { transform: translateY(-120px) translateX(var(--drift)) scale(0.4); opacity: 0; }
-    }
-
-    /* ── GOLD TEXT — animated shimmer ── */
+    /* ── GOLD TEXT ── */
     .gold-text {
-      background: linear-gradient(90deg, #A07830 0%, #C9A84C 25%, #F0D878 50%, #C9A84C 75%, #A07830 100%);
-      background-size: 300% auto;
+      background: linear-gradient(135deg, #C9A84C 0%, #E2C275 50%, #A07830 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-      animation: goldShimmer 4s linear infinite;
-    }
-    @keyframes goldShimmer {
-      from { background-position: 0% center; }
-      to   { background-position: 300% center; }
     }
 
     /* Hero title blur reveal */
     @keyframes blurReveal {
-      from { opacity: 0; filter: blur(14px); transform: translateY(24px); }
+      from { opacity: 0; filter: blur(10px); transform: translateY(20px); }
       to   { opacity: 1; filter: blur(0px); transform: translateY(0); }
     }
 
@@ -312,13 +285,6 @@
   <!-- Ken Burns background -->
   <div class="hero-bg-img" aria-hidden="true"></div>
   <div class="hero-bg-overlay" aria-hidden="true"></div>
-  <!-- Floating particles -->
-  <div class="particle" style="width:3px;height:3px;left:15%;bottom:20%;--dur:6s;--delay:0s;--drift:20px" aria-hidden="true"></div>
-  <div class="particle" style="width:2px;height:2px;left:25%;bottom:15%;--dur:8s;--delay:1s;--drift:-15px" aria-hidden="true"></div>
-  <div class="particle" style="width:3px;height:3px;left:40%;bottom:25%;--dur:7s;--delay:2s;--drift:25px" aria-hidden="true"></div>
-  <div class="particle" style="width:2px;height:2px;left:55%;bottom:18%;--dur:9s;--delay:0.5s;--drift:-20px" aria-hidden="true"></div>
-  <div class="particle" style="width:3px;height:3px;left:70%;bottom:22%;--dur:6.5s;--delay:1.5s;--drift:18px" aria-hidden="true"></div>
-  <div class="particle" style="width:2px;height:2px;left:82%;bottom:16%;--dur:7.5s;--delay:3s;--drift:-12px" aria-hidden="true"></div>
   <!-- Ambient orbs -->
   <div class="orb w-96 h-96 bg-gold/8 top-1/4 -left-32" style="animation-delay:0s" aria-hidden="true"></div>
   <div class="orb w-72 h-72 bg-wood/30 bottom-1/4 -right-20" style="animation-delay:2s" aria-hidden="true"></div>
@@ -1148,9 +1114,8 @@
     }, 1100);
   });
 
-  // ── Parallax orbs + cursor spotlight (desktop only)
+  // ── Parallax orbs (desktop only)
   if (window.innerWidth > 768) {
-    const heroEl = document.getElementById('hero');
     document.addEventListener('mousemove', (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 20;
       const y = (e.clientY / window.innerHeight - 0.5) * 20;
@@ -1158,12 +1123,6 @@
         const factor = i % 2 === 0 ? 1 : -0.6;
         orb.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
       });
-      // cursor spotlight on hero only
-      const rect = heroEl.getBoundingClientRect();
-      if (e.clientY >= rect.top && e.clientY <= rect.bottom) {
-        heroEl.style.setProperty('--mx', e.clientX + 'px');
-        heroEl.style.setProperty('--my', e.clientY + 'px');
-      }
     });
   }
 
