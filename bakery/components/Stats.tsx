@@ -35,7 +35,7 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-16 bg-amber-800">
+    <section className="py-10 bg-amber-800">
       <div className="max-w-7xl mx-auto px-6">
         <div ref={ref} className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, i) => (
@@ -46,7 +46,7 @@ export default function Stats() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="text-center"
             >
-              <p className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
+              <p className="text-3xl md:text-4xl font-bold text-white mb-1" style={{ fontFamily: "'Playfair Display', serif" }}>
                 <Counter value={s.value} suffix={s.suffix} />
               </p>
               <p className="text-amber-200/80 text-sm tracking-wide">{s.label}</p>
