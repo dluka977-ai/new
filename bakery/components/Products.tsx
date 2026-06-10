@@ -1,61 +1,162 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import type { Variants } from "framer-motion";
+import { useRef, useState } from "react";
 
-const products = [
+const categories = [
   {
-    name: "Kroasani",
-    desc: "Hrskavi spolja, meki iznutra — pravi pariski kroasan od maslanog lisnatog testa.",
+    id: "kroasani",
+    label: "Kroasani",
     img: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&q=80",
-    badge: "Bestseler",
+    items: [
+      { name: "Puter Kroasan", price: 280 },
+      { name: "Pan Au Chocolat", price: 390 },
+      { name: "Badem Kroasan", price: 420 },
+      { name: "Kroasan Noisette", price: 480 },
+      { name: "Crema Catalana", price: 450, desc: "Kroasan sa vanila kremom, kora narandže i karamelizovani šećer" },
+      { name: "Cheesecake Croissant", price: 450 },
+      { name: "La Décadanse Milk Chocolate", price: 470 },
+      { name: "La Décadanse White Chocolate", price: 470 },
+      { name: "Šunka Provolone Kroasan", price: 600 },
+      { name: "Pršuta Provolone Kroasan", price: 600 },
+      { name: "Mozzarella Croissant", price: 550 },
+      { name: "Mortadella & Feta Croissant", price: 580 },
+      { name: "Papillon", price: 590 },
+      { name: "Lemon Roll", price: 380 },
+      { name: "Kroasan Rol Sa Pistaćima", price: 380 },
+      { name: "Kroasan Rol Sa Vanilom i Šumskim Voćem", price: 380 },
+      { name: "Pain Au Raisin", price: 320, desc: "Vanilla krem i suvo grožđe" },
+      { name: "Rogalach", price: 150 },
+    ],
   },
   {
-    name: "Bagueti",
-    desc: "Klasični francuski baguet sa zlatnom korom i mekim, vazdušastim mrvicama.",
-    img: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&q=80",
-    badge: null,
+    id: "hleb",
+    label: "Hleb",
+    img: "https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?w=600&q=80",
+    items: [
+      { name: "Baguette", price: 230 },
+      { name: "Baget Sa Maslinama", price: 310 },
+      { name: "Pain Rustique 700g", price: 420, desc: "Beskvasni hleb od raženog i punog zrna brašna" },
+      { name: "Focaccia Aux Olives", price: 340 },
+      { name: "Rustik Sa Semenkama", price: 450 },
+      { name: "Challah", price: 460 },
+      { name: "Paysan", price: 520 },
+      { name: "Pain Norvegien", price: 690 },
+    ],
   },
   {
-    name: "Pain au Chocolat",
-    desc: "Svilenkasto lisnato testo omotano oko premium belgijske čokolade.",
-    img: "https://images.unsplash.com/photo-1606101194559-9f047e7a45df?w=600&q=80",
-    badge: "Omiljeno",
-  },
-  {
-    name: "Artisan Torte",
-    desc: "Višeslojne torte ukrašene sezonskim voćem i svežom kremom po narudžbini.",
+    id: "patisserie",
+    label: "Patisserie",
     img: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600&q=80",
-    badge: null,
+    items: [
+      { name: "Macaroon", price: 250, desc: "Čokolada-malina, mlečna čokolada-marakuja, bela čokolada-zeleni čaj-pistaći, toffee caramel" },
+      { name: "Raspberry Macaron", price: 250 },
+      { name: "Coconut Macaron", price: 250 },
+      { name: "Choux", price: 490 },
+      { name: "Mille Feuille", price: 690 },
+      { name: "Limun Tart", price: 680 },
+      { name: "Pistać Tart", price: 750 },
+      { name: "Tart Exotique", price: 730 },
+      { name: "Tarte Nougatine", price: 780 },
+      { name: "Sezonsko Voće Tart", price: 790 },
+      { name: "Basque Cheesecake", price: 680 },
+      { name: "Cinabon", price: 470 },
+      { name: "Limun Kolač", price: 1750 },
+      { name: "Cimet Babka", price: 2600, desc: "Babka sa puterom i cimetom" },
+      { name: "Basque Cheesecake Cela Torta (22cm)", price: 5440 },
+      { name: "Limun Tart — Ceo Kolač (22cm)", price: 5440 },
+      { name: "Tart Exotique — Ceo Kolač (22cm)", price: 5840 },
+      { name: "Sezonsko Voće Tart — Ceo Kolač", price: 6320 },
+    ],
   },
   {
-    name: "Svježi Sendviči",
-    desc: "Domaći baguet sendviči sa svežim povrćem, sirom i delikatesnim nadevom.",
+    id: "kuhinja",
+    label: "Iz Naše Kuhinje",
     img: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600&q=80",
-    badge: null,
+    items: [
+      { name: "Homemade Granola", price: 820, desc: "Granola sa sezonskim voćem, mešani orasi, med, grčki jogurt" },
+      { name: "Sourdough Avocado Toast", price: 990, desc: "Grilovani hleb, avokado, chilli pahuljice, maslinovo ulje, kuvano jaje" },
+      { name: "Sourdough Avocado Toast Feta", price: 990, desc: "Grilovani hleb, avokado, feta sir, cherry paradajz, maslinovo ulje, čili pahuljice" },
+      { name: "Pain Norvegien Avocado Toast", price: 1050, desc: "Osvežavajući avokado tost sa savršeno izbalansiranim začinima" },
+      { name: "Soup Du Jour", price: 700 },
+      { name: "Salade Verte", price: 700 },
+      { name: "Escalope Viennoise", price: 1650 },
+      { name: "Spaghetti Burrata", price: 1700 },
+      { name: "Spaghetti Gambori", price: 1950 },
+      { name: "Le Burger 180g", price: 1900 },
+      { name: "Hokkaido Biftek Sendvič", price: 1500 },
+      { name: "Steak Frites", price: 2450 },
+    ],
   },
   {
-    name: "Specijaliteti Kafe",
-    desc: "Espresso, cappuccino i filteri kafe — savršen par uz svaki naš pekarsk specijal.",
+    id: "kafa",
+    label: "Kafe",
     img: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80",
-    badge: "Novo",
+    items: [
+      { name: "Espresso", price: 330 },
+      { name: "Ristretto", price: 330 },
+      { name: "Americano", price: 340 },
+      { name: "Espresso Lungo", price: 340 },
+      { name: "Cappuccino", price: 380 },
+      { name: "Latte Macchiato", price: 420 },
+      { name: "Oat Milk Cappuccino", price: 420 },
+      { name: "Double Espresso", price: 430 },
+      { name: "Cortado", price: 460 },
+      { name: "Oat Milk Latte", price: 480 },
+      { name: "Mocha", price: 450 },
+      { name: "Cacao", price: 370 },
+    ],
+  },
+  {
+    id: "pica",
+    label: "Pića",
+    img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600&q=80",
+    items: [
+      { name: "Limunana 250ml", price: 440 },
+      { name: "Ice Tea", price: 470 },
+      { name: "San Pelegrino 250ml", price: 390 },
+      { name: "Aqua Panna 250ml", price: 390 },
+      { name: "Ceđena Pomorandža 250ml", price: 530 },
+      { name: "Rose Lemonade Fentimans 275ml", price: 540 },
+      { name: "Wild English Elderflower Fentimans 275ml", price: 540 },
+      { name: "Mandarin & Seville Orange Fentimans 275ml", price: 540 },
+      { name: "Le Tribute Premium Tonic 200ml", price: 540 },
+    ],
+  },
+  {
+    id: "pakovanja",
+    label: "Pakovanja",
+    img: "https://images.unsplash.com/photo-1606101194559-9f047e7a45df?w=600&q=80",
+    items: [
+      { name: "Sables Nantais Cookies (8 kom)", price: 720 },
+      { name: "Florentine", price: 720 },
+      { name: "Biscuit Sale", price: 850 },
+      { name: "Confiture Maison", price: 850, desc: "Domaći džem od crvenog voća" },
+      { name: "Herissons Au Chocolat", price: 1150 },
+      { name: "Batonnets Au Chocolat", price: 1450, desc: "Keks sa bademom i slanim karamelom preliven belgijskom mlečnom čokoladom" },
+      { name: "Homemade Granola 420–440g", price: 1200 },
+      { name: "Cookies BIG", price: 1200 },
+      { name: "Poklon Kutija", price: 6500 },
+    ],
   },
 ];
-
-import type { Variants } from "framer-motion";
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0, 0, 1] as [number, number, number, number], delay: i * 0.08 },
+    transition: { duration: 0.5, ease: [0.25, 0, 0, 1] as [number, number, number, number], delay: i * 0.06 },
   }),
 };
 
 export default function Products() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const [activeTab, setActiveTab] = useState("kroasani");
+
+  const active = categories.find((c) => c.id === activeTab)!;
 
   return (
     <section id="meni" className="py-24 md:py-32" style={{ background: "var(--color-warm-white)" }}>
@@ -66,72 +167,108 @@ export default function Products() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p className="text-amber-700 text-sm font-semibold tracking-[0.25em] uppercase mb-4" style={{ fontFamily: "'Playfair Display SC', serif" }}>
             Naš Meni
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4">
-            Pečeno Svaki Dan, <span className="text-amber-700 italic">Samo za Vas</span>
+            Pečeno Svaki Dan,{" "}
+            <span className="text-amber-700 italic">Samo za Vas</span>
           </h2>
-          <p className="text-stone-500 max-w-xl mx-auto leading-relaxed">
+          <p className="text-stone-500 max-w-xl mx-auto leading-relaxed mb-8">
             Svaki proizvod nastaje po tradicionalnoj recepturi, od pažljivo odabranih sastojaka.
           </p>
+
+          {/* Wolt CTA */}
+          <a
+            href="https://wolt.com/en/srb/belgrade/venue/la-boulangerie"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#009DE0] hover:bg-[#0088c2] text-white font-semibold px-7 py-3 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-400/30 cursor-pointer text-sm"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm1-13h-2v6l5.25 3.15.75-1.23-4-2.37V7z" />
+            </svg>
+            Naruči na Wolt
+          </a>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {products.map((p, i) => (
-            <motion.article
-              key={p.name}
-              custom={i}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              variants={cardVariants}
-              className="group bg-white rounded-2xl overflow-hidden shadow-md shadow-stone-200/80 hover:shadow-xl hover:shadow-amber-900/15 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+        {/* Category tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setActiveTab(cat.id)}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                activeTab === cat.id
+                  ? "bg-amber-800 text-white shadow-md shadow-amber-800/30"
+                  : "bg-stone-100 text-stone-600 hover:bg-amber-100 hover:text-amber-800"
+              }`}
             >
-              <div className="relative overflow-hidden h-52">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                {p.badge && (
-                  <span className="absolute top-3 left-3 bg-amber-700 text-white text-xs font-bold px-3 py-1 rounded-full tracking-wide">
-                    {p.badge}
-                  </span>
-                )}
-              </div>
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-stone-800 mb-2">{p.name}</h3>
-                <p className="text-stone-500 text-sm leading-relaxed">{p.desc}</p>
-                <div className="mt-4 flex items-center gap-2 text-amber-700 font-semibold text-sm group-hover:gap-3 transition-all duration-200">
-                  <span>Saznaj više</span>
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </div>
-              </div>
-            </motion.article>
+              {cat.label}
+            </button>
           ))}
         </div>
+
+        {/* Menu items */}
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3"
+        >
+          {active.items.map((item, i) => (
+            <motion.div
+              key={item.name}
+              custom={i}
+              initial="hidden"
+              animate="visible"
+              variants={cardVariants}
+              className="flex items-start justify-between gap-4 bg-white rounded-xl px-5 py-4 shadow-sm shadow-stone-200/80 hover:shadow-md hover:shadow-amber-900/10 transition-all duration-200 group"
+            >
+              <div className="flex-1 min-w-0">
+                <p className="font-semibold text-stone-800 text-sm leading-snug group-hover:text-amber-800 transition-colors duration-200">{item.name}</p>
+                {item.desc && (
+                  <p className="text-stone-400 text-xs mt-1 leading-relaxed">{item.desc}</p>
+                )}
+              </div>
+              <span className="flex-shrink-0 text-amber-700 font-bold text-sm whitespace-nowrap">
+                {item.price.toLocaleString("sr-RS")} din
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          className="text-center mt-14"
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="text-center mt-12 flex flex-wrap gap-4 justify-center"
         >
           <a
-            href="#kontakt"
-            className="inline-flex items-center gap-2 bg-amber-800 hover:bg-amber-700 text-amber-50 font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-amber-800/30 cursor-pointer"
+            href="https://wolt.com/en/srb/belgrade/venue/la-boulangerie"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-[#009DE0] hover:bg-[#0088c2] text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-blue-400/30 cursor-pointer"
           >
-            Naruči Online
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm1-13h-2v6l5.25 3.15.75-1.23-4-2.37V7z" />
             </svg>
+            Naruči na Wolt
+          </a>
+          <a
+            href="https://instagram.com/la_boulangerie_belgrade"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border-2 border-amber-800 text-amber-800 hover:bg-amber-800 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 cursor-pointer"
+          >
+            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+            @la_boulangerie_belgrade
           </a>
         </motion.div>
       </div>

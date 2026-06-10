@@ -42,8 +42,8 @@ const info = [
       </svg>
     ),
     label: "Instagram",
-    value: "@laboulangerie",
-    href: "https://instagram.com/laboulangerie",
+    value: "@la_boulangerie_belgrade",
+    href: "https://instagram.com/la_boulangerie_belgrade",
   },
 ];
 
@@ -107,6 +107,17 @@ export default function Contact() {
             {/* CTA buttons */}
             <div className="flex flex-wrap gap-3 pt-4">
               <a
+                href="https://wolt.com/en/srb/belgrade/venue/la-boulangerie"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#009DE0] hover:bg-[#0088c2] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg cursor-pointer text-sm"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8zm1-13h-2v6l5.25 3.15.75-1.23-4-2.37V7z" />
+                </svg>
+                Naruči na Wolt
+              </a>
+              <a
                 href="tel:0698833090"
                 className="inline-flex items-center gap-2 bg-amber-800 hover:bg-amber-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-amber-800/30 cursor-pointer text-sm"
               >
@@ -116,7 +127,7 @@ export default function Contact() {
                 Pozovi nas
               </a>
               <a
-                href="https://instagram.com/laboulangerie"
+                href="https://instagram.com/la_boulangerie_belgrade"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border-2 border-amber-800 text-amber-800 hover:bg-amber-800 hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer text-sm"
