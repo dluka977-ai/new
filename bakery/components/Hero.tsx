@@ -11,8 +11,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=1800&q=80')",
+          backgroundImage: "url('/gallery/la1.jpg')",
         }}
         aria-hidden="true"
       />

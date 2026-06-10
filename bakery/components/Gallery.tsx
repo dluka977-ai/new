@@ -4,46 +4,12 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const images = [
-  {
-    src: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=700&q=80",
-    alt: "Zlatni kroasani",
-    span: "tall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=700&q=80",
-    alt: "Sveži bagueti",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=700&q=80",
-    alt: "Artisan torta",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&q=80",
-    alt: "Sveže pečeni hlebovi",
-    span: "wide",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=700&q=80",
-    alt: "Espresso kafa",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=700&q=80",
-    alt: "Enterijer pekare",
-    span: "tall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1606101194559-9f047e7a45df?w=700&q=80",
-    alt: "Pain au chocolat",
-    span: "normal",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=700&q=80",
-    alt: "Čokoladna torta",
-    span: "normal",
-  },
+  { src: "/gallery/la1.jpg", alt: "La BoULANGeRie — priprema kroasana" },
+  { src: "/gallery/la2.jpg", alt: "La BoULANGeRie — sendvič" },
+  { src: "/gallery/la3.jpg", alt: "La BoULANGeRie — hleb sa semenkama" },
+  { src: "/gallery/la4.jpg", alt: "La BoULANGeRie — čokoladni kroasani" },
+  { src: "/gallery/la5.jpg", alt: "La BoULANGeRie — bagueti" },
+  { src: "/gallery/la6.jpg", alt: "La BoULANGeRie — peciva" },
 ];
 
 export default function Gallery() {
