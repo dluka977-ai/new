@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   title: "La BoULANGeRie | Autentična Francuska Pekara u Beogradu",
   description:
     "La BoULANGeRie — svež hleb, kroasani, bagueti i kolači pečeni svakodnevno u srcu Beograda. Poseta nas na Kneza Miloša 50.",

@@ -15,8 +15,14 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="onama" className="py-24 md:py-32 bg-stone-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="onama" className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=70')" }}
+      />
+      <div className="absolute inset-0 bg-amber-50/92" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Images collage */}
           <motion.div
