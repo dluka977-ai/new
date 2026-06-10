@@ -7,14 +7,26 @@ export default function Hero() {
       id="vrh"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background image via Unsplash (bakery/croissants) */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1623334044303-241021148842?w=1800&q=85')",
-        }}
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
         aria-hidden="true"
-      />
+        className="absolute inset-0 w-full h-full object-cover"
+        poster="https://images.unsplash.com/photo-1623334044303-241021148842?w=1800&q=85"
+      >
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-hands-kneading-dough-on-a-table-42635-large.mp4"
+          type="video/mp4"
+        />
+        {/* Fallback image if video fails */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1623334044303-241021148842?w=1800&q=85')" }}
+        />
+      </video>
 
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
@@ -28,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-amber-300 text-sm font-semibold tracking-[0.3em] uppercase mb-6 font-sc"
+          className="text-amber-300 text-sm font-semibold tracking-[0.3em] uppercase mb-6"
           style={{ fontFamily: "'Playfair Display SC', serif" }}
         >
           Beograd, Srbija
