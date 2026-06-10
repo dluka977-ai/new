@@ -4,12 +4,12 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 
 const images = [
-  { src: "/gallery/la1.jpg", alt: "La BoULANGeRie — priprema kroasana" },
-  { src: "/gallery/la2.jpg", alt: "La BoULANGeRie — sendvič" },
-  { src: "/gallery/la3.jpg", alt: "La BoULANGeRie — hleb sa semenkama" },
-  { src: "/gallery/la4.jpg", alt: "La BoULANGeRie — čokoladni kroasani" },
-  { src: "/gallery/la5.jpg", alt: "La BoULANGeRie — bagueti" },
-  { src: "/gallery/la6.jpg", alt: "La BoULANGeRie — peciva" },
+  { src: "/la1.png", alt: "La BoULANGeRie — priprema kroasana" },
+  { src: "/la2.png", alt: "La BoULANGeRie — sendvič" },
+  { src: "/la3.png", alt: "La BoULANGeRie — hleb sa semenkama" },
+  { src: "/la4.png", alt: "La BoULANGeRie — čokoladni kroasani" },
+  { src: "/la5.png", alt: "La BoULANGeRie — bagueti" },
+  { src: "/la6.png", alt: "La BoULANGeRie — peciva" },
 ];
 
 export default function Gallery() {
