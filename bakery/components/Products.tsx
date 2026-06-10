@@ -167,7 +167,7 @@ export default function Products() {
           "url('https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=1800&q=60')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "fixed",
+        backgroundAttachment: "scroll",
       }}
     >
       {/* Warm overlay */}

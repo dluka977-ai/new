@@ -50,7 +50,7 @@ export default function WhyUs() {
     <section className="py-24 md:py-32 relative overflow-hidden">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1800&q=70')" }}
       />
       {/* Dark amber overlay */}

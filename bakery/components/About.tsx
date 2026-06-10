@@ -18,7 +18,7 @@ export default function About() {
     <section id="onama" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1800&q=70')" }}
       />
       <div className="absolute inset-0 bg-amber-50/92" />
