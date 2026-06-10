@@ -7,26 +7,12 @@ export default function Hero() {
       id="vrh"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/la1.png')" }}
         aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover"
-        poster="https://images.unsplash.com/photo-1623334044303-241021148842?w=1800&q=85"
-      >
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-hands-kneading-dough-on-a-table-42635-large.mp4"
-          type="video/mp4"
-        />
-        {/* Fallback image if video fails */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1623334044303-241021148842?w=1800&q=85')" }}
-        />
-      </video>
+      />
 
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" aria-hidden="true" />
