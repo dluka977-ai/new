@@ -1,7 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+
+function useIsOpen() {
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    const check = () => {
+      // Belgrade time (UTC+2 summer, UTC+1 winter)
+      const now = new Date();
+      const belgrade = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Belgrade" }));
+      const hour = belgrade.getHours();
+      setIsOpen(hour >= 8 && hour < 18);
+    };
+    check();
+    const t = setInterval(check, 60000);
+    return () => clearInterval(t);
+  }, []);
+  return isOpen;
+}
 
 const locations = [
   {
@@ -41,6 +58,7 @@ export default function Contact() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [activeLocation, setActiveLocation] = useState("kneza");
+  const isOpen = useIsOpen();
 
   const active = locations.find((l) => l.id === activeLocation)!;
 
@@ -161,8 +179,10 @@ export default function Contact() {
                   <span className="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full">08:00 – 18:00</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-green-700 text-sm font-medium">Otvoreno sada</span>
+                  <div className={`w-2 h-2 rounded-full ${isOpen ? "bg-green-500 animate-pulse" : "bg-red-400"}`} />
+                  <span className={`text-sm font-medium ${isOpen ? "text-green-700" : "text-red-500"}`}>
+                    {isOpen ? "Otvoreno sada" : "Zatvoreno"}
+                  </span>
                 </div>
               </div>
             </div>
