@@ -47,12 +47,14 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section className="py-24 md:py-32 bg-amber-900 relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-amber-300 blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-amber-300 blur-3xl" />
-      </div>
+    <section className="py-24 md:py-32 relative overflow-hidden">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=1800&q=70')" }}
+      />
+      {/* Dark amber overlay */}
+      <div className="absolute inset-0 bg-amber-950/85" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
