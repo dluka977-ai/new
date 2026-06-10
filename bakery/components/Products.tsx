@@ -159,8 +159,20 @@ export default function Products() {
   const active = categories.find((c) => c.id === activeTab)!;
 
   return (
-    <section id="meni" className="py-24 md:py-32" style={{ background: "var(--color-warm-white)" }}>
-      <div className="max-w-7xl mx-auto px-6">
+    <section
+      id="meni"
+      className="py-24 md:py-32 relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=1800&q=60')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
+      {/* Warm overlay */}
+      <div className="absolute inset-0 bg-amber-50/92 backdrop-blur-[1px]" />
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
           ref={ref}

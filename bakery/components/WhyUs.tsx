@@ -67,7 +67,7 @@ export default function WhyUs() {
             Zašto Mi
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Razlozi da Nas <span className="text-amber-300 italic">Posjetite</span>
+            Razlozi da Nas <span className="text-amber-300 italic">Posetite</span>
           </h2>
           <p className="text-amber-100/70 max-w-xl mx-auto leading-relaxed">
             Svaki detalj je osmišljen da vam pruži najprijatnije iskustvo francuske pekare.
