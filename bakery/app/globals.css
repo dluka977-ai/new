@@ -12,13 +12,16 @@
   --color-charcoal: #1C1917;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
-body {
-  overflow-x: hidden;
+* {
+  box-sizing: border-box;
 }
 
 body {

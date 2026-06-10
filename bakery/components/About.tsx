@@ -42,7 +42,7 @@ export default function About() {
             </motion.div>
             <motion.div
               variants={fadeUp}
-              className="absolute -bottom-8 -right-4 md:-right-8 w-48 md:w-56 rounded-xl overflow-hidden shadow-xl shadow-amber-900/20 border-4 border-amber-50"
+              className="absolute -bottom-8 right-0 md:-right-4 w-40 md:w-48 rounded-xl overflow-hidden shadow-xl shadow-amber-900/20 border-4 border-amber-50"
             >
               <img
                 src="https://images.unsplash.com/photo-1549903072-7e6e0bedb7fb?w=400&q=80"
@@ -54,7 +54,7 @@ export default function About() {
             {/* Decorative badge */}
             <motion.div
               variants={fadeUp}
-              className="absolute -top-6 -left-4 md:-left-8 bg-amber-800 text-amber-50 rounded-2xl p-4 shadow-lg"
+              className="absolute -top-6 left-0 md:-left-4 bg-amber-800 text-amber-50 rounded-2xl p-4 shadow-lg"
             >
               <p className="font-sc text-2xl font-bold leading-none" style={{ fontFamily: "'Playfair Display SC', serif" }}>15+</p>
               <p className="text-xs tracking-wider mt-1 opacity-80">Godina tradicije</p>
