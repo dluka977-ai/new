@@ -1,0 +1,130 @@
+Ti si ekspert web developer koji pravi premium single-page sajtove. Napravi kompletan, moderan i elegantan landing page za frizerski salon kao jedan index.html fajl.
+
+=== TEHNIČKE SPECIFIKACIJE ===
+- Jedan index.html fajl (sve CSS i JS ugrađeno unutra)
+- Tailwind CSS via CDN
+- AOS (Animate On Scroll) library za animacije pri skrolovanju
+- Google Fonts: "Playfair Display" za naslove, "Karla" ili "Inter" za tekst
+- Vanilla JS (bez frameworka)
+- Mobilno responzivan (mobile-first)
+- Smooth scroll navigacija
+- Hover efekti na svim interaktivnim elementima
+
+=== DIZAJN STIL ===
+- Boja: elegantna paleta — crna, bela, zlatna ili roze-zlatna (#C9A96E ili sličan nijans)
+- Glassmorphism efekti na karticama i navbaru
+- Suptilni gradijenti u pozadini
+- Zaobljeni uglovi (border-radius: 12–24px)
+- Slike sa Unsplash (frizerski salon, kosa, stilizovanje) — koristi direktne URL-ove visoke rezolucije
+- Cursor spotlight efekat — radijalni gradijent prati kursor miša
+- Favicon emoji (npr. ✂️) direktno u <link rel="icon">
+
+=== SEKCIJE (redosledom) ===
+
+1. PAGE LOADER
+   - Animirani loader pri ulasku na sajt (2–3 sekunde)
+   - Logo/naziv salona sa progress barom
+   - Fade-out kada se sajt učita
+   - JS: history.scrollRestoration = "manual" za vraćanje na vrh pri refreshu
+
+2. NAVBAR (sticky)
+   - Transparentan iznad hero sekcije, postaje glass pri skrolovanju
+   - Logo levo, linkovi desno
+   - Linkovi: Početna, O Nama, Usluge, Galerija, Utisci, Kontakt
+   - Hamburger meni za mobilne uređaje (JS toggle)
+   - Boja teksta bela dok je hero vidljiv, tamna kada navbar postane glass
+
+3. HERO SEKCIJA
+   - Fullscreen (100vh), visokokvalitetna Unsplash slika frizerskog salona kao pozadina
+   - Taman overlay (gradient)
+   - Zlatna tanka linija na vrhu
+   - Pre-heading: naziv grada i države (sitna slova, tracking)
+   - Glavni naslov (h1): veliki, bold, italic akcenat u zlatnoj boji
+   - Podnaslov: kratka rečenica o salonu
+   - 2 CTA dugmeta: "Pogledaj Usluge" (puno, zlatno) i "Rezerviši Termin" (glass, providno)
+   - Scroll indikator na dnu (animirana linija + tekst "Skroluj")
+
+4. O NAMA
+   - 2-kolona layout: levo slike (kolaž), desno tekst
+   - Kolaž: velika slika + mala slika u uglu + badge sa godinama iskustva
+   - Tekst: pre-heading, naslov, 2 paragrafa, 3 mini-statistike (npr. 500+ zadovoljnih klijenata, 10+ godina, Ručni rad), CTA dugme
+   - Suptilna pozadinska slika sa overlay bojom
+
+5. STATISTIKE (animirani brojači)
+   - 4 kartice: broj klijenata, godina iskustva, broj usluga, ocena (npr. 4.9★)
+   - Animacija brojeva kada postanu vidljivi (Intersection Observer + JS counter)
+   - Zlatne ikone (SVG) iznad svakog broja
+   - Tamna pozadina (kontrast sekcija)
+
+6. USLUGE (meni)
+   - Tab navigacija: Šišanje, Bojenje, Nega, Stilizovanje, Tretmani, Paketi
+   - Svaka usluga: naziv, kratak opis, cena u RSD
+   - Hover efekti na karticama
+   - Pozadinska slika sa amber/roze overlay-em
+   - Dugme na dnu za booking/WhatsApp
+
+7. ZAŠTO MI
+   - 4–6 razloga sa ikonama (SVG) i kratkim opisima
+   - Grid layout
+   - Pozadinska slika sa overlay-em
+   - Primeri: Iskusni majstori, Premium proizvodi, Opuštajuća atmosfera, Fleksibilno radno vreme
+
+8. GALERIJA (masonry)
+   - CSS masonry layout (columns: 3 280px)
+   - 6–9 Unsplash slika frizura i salona
+   - Lightbox pri kliku (JS, bez eksternih librarija)
+   - Hover overlay sa zoom efektom
+
+9. UTISCI (carousel)
+   - 5–7 recenzija klijenata
+   - Autoplay 5 sekundi, arrows levo/desno, dots navigacija
+   - Zvezdice ocena, avatar inicijali u krugu, ime klijenta
+   - AnimatePresence stilom: fade ili slide tranzicija
+   - Tamna pozadina
+
+10. KONTAKT
+    - 3 lokacije (switchable tabs ili accordion)
+    - Svaka lokacija: adresa, telefon, radno vreme, "Otvoren/Zatvoren" badge (real-time JS, Europa/Beograd timezone)
+    - Forma: ime, telefon/email, poruka, dugme Pošalji
+    - 3 kartice informacija: lokacija, telefon, radno vreme
+    - Pozadina sa suptilnim gradijentom
+
+11. FOOTER
+    - Logo + kratak opis
+    - Brza navigacija
+    - Kontakt info
+    - Ikone društvenih mreža (Instagram, Facebook, TikTok — SVG)
+    - Copyright + "Sva prava zadržana"
+    - Zlatna linija na vrhu footera
+
+12. FLOATING ELEMENTI
+    - WhatsApp ili booking dugme (fiksno, dno desno, animirani bounce)
+    - Back-to-top dugme (pojavljuje se pri skrolovanju)
+    - Cursor spotlight: radijalni gradient prati kursor, poluprovidna zlatna/roze boja
+
+=== ANIMACIJE ===
+- AOS: fade-up, fade-right, fade-left, zoom-in — na svim sekcijama
+- Framer-motion-stil tranzicije (simulirano CSS + JS)
+- Hover: scale(1.02–1.05), box-shadow, boja pozadine
+- Loader: fade-out + scale pri učitavanju
+- Statistike: broj se animira od 0 do finalne vrednosti
+- Navbar: glass efekat + boja teksta menja se sa scrollom
+
+=== SADRŽAJ ===
+- Sve na srpskom jeziku
+- Realne usluge i cene u RSD (izmišljene ali realne za Beograd)
+- Recenzije sa realnim imenima i iskrenim tekstovima
+- Kontakt podaci (izmišljeni ali realni format)
+- Radno vreme: radnim danom 09–20h, subota 09–18h, nedeljom zatvoreno
+
+=== KVALITET KODA ===
+- Semantički HTML5 (header, main, section, footer, nav)
+- Aria-hidden na dekorativnim elementima
+- Loading="lazy" na svim slikama ispod folda
+- Smooth scroll na svim anchor linkovima
+- CSS varijable za boje (definisane u :root)
+- Mobilni meni koji se zatvara klikom na link
+- overflow-x: hidden na html i body (sprečava horizontalni scroll na mobilnim)
+- box-sizing: border-box na svim elementima
+
+Napravi kompletan, funkcionalan kod koji je odmah spreman za pretraživač. Ne ostavljaj placeholder komentare — sve treba da bude implementirano.
