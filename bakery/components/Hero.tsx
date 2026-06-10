@@ -82,12 +82,6 @@ export default function Hero() {
             </svg>
             Naruči Online
           </a>
-          <a
-            href="#onama"
-            className="inline-flex items-center justify-center gap-2 text-amber-200 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-200 cursor-pointer text-base border border-amber-200/30 hover:border-white/40"
-          >
-            O Nama
-          </a>
         </motion.div>
       </div>
 

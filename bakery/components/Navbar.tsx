@@ -42,10 +42,14 @@ export default function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-medium text-stone-700 hover:text-amber-700 transition-colors duration-200 tracking-wide cursor-pointer relative group"
+                className={`text-sm font-semibold transition-colors duration-200 tracking-wide cursor-pointer relative group ${
+                  scrolled
+                    ? "text-stone-700 hover:text-amber-700"
+                    : "text-white hover:text-amber-300"
+                }`}
               >
                 {l.label}
-                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-amber-600 group-hover:w-full transition-all duration-300" />
+                <span className={`absolute -bottom-0.5 left-0 w-0 h-px group-hover:w-full transition-all duration-300 ${scrolled ? "bg-amber-600" : "bg-amber-300"}`} />
               </a>
             </li>
           ))}
@@ -54,7 +58,11 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#kontakt"
-          className="hidden md:inline-flex items-center gap-2 bg-amber-800 hover:bg-amber-700 text-amber-50 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-amber-800/30 cursor-pointer"
+          className={`hidden md:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg cursor-pointer ${
+            scrolled
+              ? "bg-amber-800 hover:bg-amber-700 text-amber-50 hover:shadow-amber-800/30"
+              : "bg-white/20 hover:bg-white/30 text-white border border-white/30"
+          }`}
         >
           Naruči Online
         </a>
