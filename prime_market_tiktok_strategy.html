@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prime Market — TikTok Content Strategy</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 40px;
+    color: #1a1a1a;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 60px 0 50px;
+    border-bottom: 3px solid #1a1a1a;
+    margin-bottom: 50px;
+  }
+  .cover h1 {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin: 0 0 8px;
+  }
+  .cover .subtitle {
+    font-size: 16px;
+    color: #555;
+    font-style: italic;
+    margin: 0 0 20px;
+  }
+  .cover .tag {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin: 4px;
+  }
+
+  /* Section headings */
+  h2 {
+    font-size: 22px;
+    font-weight: 900;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 8px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  h3 {
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  /* Content idea cards */
+  .idea-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 28px;
+    page-break-inside: avoid;
+  }
+  .idea-card .idea-number {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+  }
+  .idea-card h4 {
+    font-size: 18px;
+    font-weight: 900;
+    margin: 0 0 10px;
+    line-height: 1.3;
+  }
+  .idea-card .why {
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+    color: #555;
+    margin-bottom: 16px;
+    padding: 10px 14px;
+    background: #f7f7f7;
+    border-radius: 4px;
+    border-left: 3px solid #bbb;
+  }
+  .idea-card .why strong {
+    color: #1a1a1a;
+  }
+  .idea-card .meta {
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    color: #888;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* Slide table */
+  .slide-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+  }
+  .slide-table thead tr {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  .slide-table thead th {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .slide-table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  .slide-table tbody tr:last-child {
+    background: #fff8e1;
+    font-weight: 700;
+  }
+  .slide-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .slide-table td:first-child {
+    width: 80px;
+    color: #999;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  /* Summary table */
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+  }
+  .summary-table th {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .summary-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  .summary-table tr:nth-child(even) td {
+    background: #f9f9f9;
+  }
+  .summary-table td:first-child {
+    font-weight: 900;
+    color: #888;
+    width: 30px;
+  }
+
+  /* Format badges */
+  .format-badge {
+    display: inline-block;
+    font-family: 'Arial', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    background: #eef2ff;
+    color: #3730a3;
+  }
+
+  /* Research box */
+  .research-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .research-box h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: #166534;
+    font-size: 12px;
+  }
+  .research-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+  }
+  .research-box td {
+    padding: 6px 10px;
+    border-bottom: 1px solid #d1fae5;
+    vertical-align: top;
+  }
+  .research-box td:first-child {
+    font-weight: 700;
+    color: #166534;
+    width: 200px;
+    white-space: nowrap;
+  }
+
+  /* Strategy box */
+  .strategy-box {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 40px;
+  }
+  .strategy-box h3 {
+    margin-top: 0;
+    color: #9a3412;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .strategy-box table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    font-family: 'Arial', sans-serif;
+  }
+  .strategy-box th {
+    background: #9a3412;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .strategy-box td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #fed7aa;
+    vertical-align: top;
+  }
+  .strategy-box tr:nth-child(odd) td {
+    background: #fff7ed;
+  }
+
+  .hashtag-block {
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-top: 16px;
+    line-height: 2;
+  }
+
+  .format-overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .format-overview-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px 16px;
+  }
+  .format-overview-item .num {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 4px;
+  }
+  .format-overview-item .name {
+    font-weight: 900;
+    font-size: 14px;
+  }
+  .format-overview-item .desc {
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 40px 0;
+  }
+
+  @media print {
+    body { margin: 20px; padding: 0 20px; }
+    .idea-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p style="font-family:Arial,sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin-bottom:16px;">Content Strategy Document</p>
+  <h1>Prime Market</h1>
+  <p class="subtitle">TikTok Content System — 50 Faceless Slideshow Ideas<br>Based on @officialtwinsupply Content Patterns</p>
+  <div style="margin-top:24px;">
+    <span class="tag">Electronics Reselling</span>
+    <span class="tag">Apple Products</span>
+    <span class="tag">Dyson</span>
+    <span class="tag">Faceless Content</span>
+    <span class="tag">UK Market</span>
+  </div>
+</div>
+
+
+<!-- RESEARCH FINDINGS -->
+<h2>Account Research: @officialtwinsupply</h2>
+
+<div class="research-box">
+  <h3>VERIFIED DATA POINTS</h3>
+  <table>
+    <tr><td>Followers</td><td>~32,400</td></tr>
+    <tr><td>Location</td><td>UK-based — twinsupply.co.uk</td></tr>
+    <tr><td>Products</td><td>Dyson Airwrap, AirPods Max, Apple products, items under £100</td></tr>
+    <tr><td>Top Content Themes</td><td>Legitimacy ("Is Twin Supply Legit?"), AirPod Max vendor sourcing, Dyson unboxing, products-under-price-point reveals, reselling methods</td></tr>
+    <tr><td>Content Formats</td><td>Price reveals, unboxings, vendor reviews, reselling how-to, legitimacy/social proof slideshows</td></tr>
+    <tr style="border-bottom:none;"><td>Key Insight</td><td>"Is it legit?" content = massive demand signal. Trust is the #1 currency in this niche.</td></tr>
+  </table>
+</div>
+
+
+<!-- FORMAT OVERVIEW -->
+<h2>7 Core Content Formats</h2>
+
+<div class="format-overview">
+  <div class="format-overview-item">
+    <div class="num">FORMAT 01</div>
+    <div class="name">Price Reveal Slideshow</div>
+    <div class="desc">Supplier price vs. retail — creates outrage + shares</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 02</div>
+    <div class="name">Legitimacy / Social Proof</div>
+    <div class="desc">Vouches, receipts, order proof, customer wins</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 03</div>
+    <div class="name">Product Demand List</div>
+    <div class="desc">"X products everyone wants right now"</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 04</div>
+    <div class="name">Reselling Education</div>
+    <div class="desc">Step-by-step how to profit — builds authority</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 05</div>
+    <div class="name">Vendor / Source Reveal</div>
+    <div class="desc">How to find or access a real supplier</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 06</div>
+    <div class="name">Unboxing Text Recap</div>
+    <div class="desc">Text-based proof of what arrived — no face needed</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 07</div>
+    <div class="name">Myth-Bust / Reality Check</div>
+    <div class="desc">Correcting reselling misconceptions — high save rate</div>
+  </div>
+  <div class="format-overview-item">
+    <div class="num">FORMAT 08–11</div>
+    <div class="name">Brand Story / Seasonal / Aspirational</div>
+    <div class="desc">Origin story, seasonal urgency, lifestyle content</div>
+  </div>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- ============================================================ -->
+<!--  THE 50 IDEAS                                                 -->
+<!-- ============================================================ -->
+
+<h2>The 50 Content Ideas</h2>
+
+
+<!-- FORMAT 1 -->
+<h3>Format 1 — Price Reveal Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 01</div>
+  <h4>"Products You're Paying Retail For That You Shouldn't Be"</h4>
+  <div class="why"><strong>Why it works:</strong> Creates instant anger/curiosity gap. People feel they've been overpaying. Generates shares, saves, and follows.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM "PRICES"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>You're overpaying for these. Every. Single. Time. 🚨</td></tr>
+      <tr><td>Slide 2</td><td>AirPods Pro 2 — Retail: £249. Our price: £XX. That's £XXX in profit per unit.</td></tr>
+      <tr><td>Slide 3</td><td>Dyson Airwrap — Retail: £479. Supplier cost: £XXX. Margin: £XXX.</td></tr>
+      <tr><td>Slide 4</td><td>Apple Watch Series 9 — Retail: £399. Our clients pay: £XXX.</td></tr>
+      <tr><td>Slide 5</td><td>These prices aren't public. They're for our network only.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Follow @PrimeMarket. DM "PRICES" to get access.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 02</div>
+  <h4>"Items Under £100 That Sell For 3x"</h4>
+  <div class="why"><strong>Why it works:</strong> "Under £X" format is proven viral on Twin Supply. Low price entry = low risk perception = high curiosity.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM "LIST"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>5 items under £100 that flip for 3x profit 👇</td></tr>
+      <tr><td>Slide 2</td><td>AirPods Gen 3 — Buy: £XX / Sell: £XXX</td></tr>
+      <tr><td>Slide 3</td><td>Dyson V8 — Buy: £XX / Sell: £XXX</td></tr>
+      <tr><td>Slide 4</td><td>Apple Watch SE — Buy: £XX / Sell: £XXX</td></tr>
+      <tr><td>Slide 5</td><td>JBL Charge 5 — Buy: £XX / Sell: £XXX</td></tr>
+      <tr><td>Slide 6</td><td>iPad 10th Gen — Buy: £XX / Sell: £XXX</td></tr>
+      <tr><td>Slide 7 ★</td><td>We supply all of these. DM "LIST" for pricing.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 03</div>
+  <h4>"Retail Price vs. What We Actually Pay"</h4>
+  <div class="why"><strong>Why it works:</strong> Side-by-side price comparison triggers disbelief and shares.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow for supplier drops</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Retail price vs. what suppliers actually charge 👀</td></tr>
+      <tr><td>Slide 2</td><td>AirPods Max — Apple Store: £549 / Our cost: £XXX</td></tr>
+      <tr><td>Slide 3</td><td>Dyson Supersonic — John Lewis: £429 / Our cost: £XXX</td></tr>
+      <tr><td>Slide 4</td><td>iPhone 15 Pro — Retail: £999 / Bulk supply: £XXX</td></tr>
+      <tr><td>Slide 5</td><td>This is why resellers win. Margin is built in.</td></tr>
+      <tr><td>Slide 6 ★</td><td>@PrimeMarket — Follow for supplier drops.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 04</div>
+  <h4>"If You're Buying These at Retail You're Losing"</h4>
+  <div class="why"><strong>Why it works:</strong> Loss aversion framing performs better than positive framing on TikTok.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to enquire</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Buying these at retail? You're leaving money on the table.</td></tr>
+      <tr><td>Slide 2</td><td>Dyson Airwrap — Retail: £479. You should never pay this.</td></tr>
+      <tr><td>Slide 3</td><td>AirPods Pro — Retail: £249. Not if you know where to look.</td></tr>
+      <tr><td>Slide 4</td><td>iPad Air — Retail: £699. Our network accesses it for less.</td></tr>
+      <tr><td>Slide 5</td><td>The difference between retail buyers and resellers is one supplier.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market. Building the UK's best electronics supply network.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 05</div>
+  <h4>"Products That Have Never Dropped in Demand"</h4>
+  <div class="why"><strong>Why it works:</strong> Positions your brand as knowledgeable. Creates FOMO for resellers who aren't carrying these.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: Follow for drops</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>These products have sold every single month for 3 years straight 📊</td></tr>
+      <tr><td>Slide 2</td><td>AirPods Pro — Always in demand. Always profitable.</td></tr>
+      <tr><td>Slide 3</td><td>Dyson Airwrap — Women will buy this regardless of the economy.</td></tr>
+      <tr><td>Slide 4</td><td>iPhone (any model) — Most resold tech product on the planet.</td></tr>
+      <tr><td>Slide 5</td><td>Samsung Galaxy S-Series — Android equivalent. Never stops moving.</td></tr>
+      <tr><td>Slide 6</td><td>MacBooks — Students + professionals = 365-day demand.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Stock these. You will never sit on dead inventory.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 2 -->
+<h3>Format 2 — Legitimacy &amp; Social Proof Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 06</div>
+  <h4>"Why People Are Choosing Prime Market"</h4>
+  <div class="why"><strong>Why it works:</strong> Directly addresses the "Is [brand] legit?" question Twin Supply's audience asks constantly. Builds trust before anyone doubts you.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to join the network</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Why our clients keep coming back 👇</td></tr>
+      <tr><td>Slide 2</td><td>✅ Real stock. Not dropshipped. Not promised. In hand.</td></tr>
+      <tr><td>Slide 3</td><td>✅ Verified by customers — [X] orders fulfilled this month.</td></tr>
+      <tr><td>Slide 4</td><td>✅ Every item tested and checked before dispatch.</td></tr>
+      <tr><td>Slide 5</td><td>✅ Growing network of resellers across the UK.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market. DM to join the network.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 07</div>
+  <h4>"What Our Customers Received This Week"</h4>
+  <div class="why"><strong>Why it works:</strong> Proves stock is real without showing your face. Builds trust through proof-of-delivery content. Use as a weekly recurring post.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: Follow @PrimeMarket</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What went out from Prime Market this week 📦</td></tr>
+      <tr><td>Slide 2</td><td>Order 1: 3x AirPods Pro — Delivered to Manchester.</td></tr>
+      <tr><td>Slide 3</td><td>Order 2: Dyson Airwrap — Customer resold same day.</td></tr>
+      <tr><td>Slide 4</td><td>Order 3: 2x iPhone 15 — Flipped within 48 hours.</td></tr>
+      <tr><td>Slide 5</td><td>Order 4: Apple Watch bundle — Sold before arrival.</td></tr>
+      <tr><td>Slide 6</td><td>Every order tracked. Every customer verified.</td></tr>
+      <tr><td>Slide 7 ★</td><td>We're building something real. Follow @PrimeMarket.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 08</div>
+  <h4>"Before You Buy From Any Supplier, Check These Things"</h4>
+  <div class="why"><strong>Why it works:</strong> Educational positioning. Makes your audience trust YOU as the standard, then positions you as the supplier who meets every standard.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "PM answers yes to all 5. DM to verify."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Before you buy from any supplier — ask these 5 questions.</td></tr>
+      <tr><td>Slide 2</td><td>1. Can I see proof of stock before payment?</td></tr>
+      <tr><td>Slide 3</td><td>2. Do you have verified customer reviews?</td></tr>
+      <tr><td>Slide 4</td><td>3. What is your return/issue policy?</td></tr>
+      <tr><td>Slide 5</td><td>4. Can you supply consistently, not just one-time?</td></tr>
+      <tr><td>Slide 6</td><td>5. Are you building a real business or a scam page?</td></tr>
+      <tr><td>Slide 7 ★</td><td>Prime Market answers yes to all 5. DM to verify.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 09</div>
+  <h4>"Our First 50 Orders — What We Learned"</h4>
+  <div class="why"><strong>Why it works:</strong> Founder story without a face. Builds emotional connection and authenticity. High follow-rate for brand story content.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow along</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Our first 50 orders taught us everything. Here's what happened.</td></tr>
+      <tr><td>Slide 2</td><td>Orders 1–10: Small, cautious. We tested every product ourselves.</td></tr>
+      <tr><td>Slide 3</td><td>Orders 11–25: Word spread. Repeat buyers started forming.</td></tr>
+      <tr><td>Slide 4</td><td>Orders 26–50: We realised — people don't want a shop. They want a supplier they trust.</td></tr>
+      <tr><td>Slide 5</td><td>That's what Prime Market became. A network, not just a seller.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Building something different. Follow along.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 10</div>
+  <h4>"This Is What Sets Us Apart From Every Other Supplier"</h4>
+  <div class="why"><strong>Why it works:</strong> Direct competitor differentiation. The "Is it legit?" demand shows this niche has a trust crisis. You solve it in one post.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to start</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Every supplier says they're the best. Here's why Prime Market actually is.</td></tr>
+      <tr><td>Slide 2</td><td>Most suppliers: Take payment → you wait → maybe it arrives.</td></tr>
+      <tr><td>Slide 3</td><td>Prime Market: Stock verified → order placed → tracked to your door.</td></tr>
+      <tr><td>Slide 4</td><td>We don't promise what we don't have.</td></tr>
+      <tr><td>Slide 5</td><td>No minimum order. No upfront risk. No excuses.</td></tr>
+      <tr><td>Slide 6 ★</td><td>This is what a real supplier looks like. DM to start.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 3 -->
+<h3>Format 3 — Product Demand List Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 11</div>
+  <h4>"Products Everyone Is Looking For Right Now"</h4>
+  <div class="why"><strong>Why it works:</strong> Positions Prime Market as in-the-know. Creates FOMO. "Right now" language triggers urgency.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: Follow for drops</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>5 electronics everyone is searching for right now 👀</td></tr>
+      <tr><td>Slide 2</td><td>#1: AirPods Pro 2 — Demand never drops.</td></tr>
+      <tr><td>Slide 3</td><td>#2: Dyson Airwrap — Women buy this at every price point.</td></tr>
+      <tr><td>Slide 4</td><td>#3: iPhone 15/16 — Universal. Always moving.</td></tr>
+      <tr><td>Slide 5</td><td>#4: Apple Watch Series 9 — Gifting season drives this year-round.</td></tr>
+      <tr><td>Slide 6</td><td>#5: Samsung Fold/Flip — Rising fast. Early movers win.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Prime Market stocks all of these. Follow for drops.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 12</div>
+  <h4>"The 5 Best Electronics to Flip Right Now"</h4>
+  <div class="why"><strong>Why it works:</strong> "Best to flip" language attracts resellers specifically. Resellers become your best B2B customers.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM for supply pricing</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The 5 best electronics to flip right now (with real margins) 💰</td></tr>
+      <tr><td>Slide 2</td><td>1. AirPods Max — Avg flip profit: £80–£150 per unit</td></tr>
+      <tr><td>Slide 3</td><td>2. Dyson Supersonic — Avg flip profit: £100–£200 per unit</td></tr>
+      <tr><td>Slide 4</td><td>3. MacBook Air M2 — Avg flip profit: £150–£300 per unit</td></tr>
+      <tr><td>Slide 5</td><td>4. iPad Pro — Avg flip profit: £100–£200 per unit</td></tr>
+      <tr><td>Slide 6</td><td>5. iPhone 15 Pro — Avg flip profit: £100–£200 per unit</td></tr>
+      <tr><td>Slide 7 ★</td><td>Need supply at the right prices? Prime Market. DM now.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 13</div>
+  <h4>"Gifts That Always Sell Out — Stock These Now"</h4>
+  <div class="why"><strong>Why it works:</strong> Seasonal urgency without being seasonal. Works year-round. Positions you as ahead-of-the-curve.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to order</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Gifts that sell out every year — stock these before demand spikes 🎁</td></tr>
+      <tr><td>Slide 2</td><td>Dyson Airwrap — Sold out in retail before Christmas every year.</td></tr>
+      <tr><td>Slide 3</td><td>AirPods Pro — #1 gifted tech product globally.</td></tr>
+      <tr><td>Slide 4</td><td>Apple Watch — Wrist gifting is a billion-pound market.</td></tr>
+      <tr><td>Slide 5</td><td>Retailers are already planning. Are you?</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market. Get ahead of the spike. DM to order.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 14</div>
+  <h4>"Products That Will Be Out of Stock by Q4"</h4>
+  <div class="why"><strong>Why it works:</strong> Creates urgency based on real seasonal demand. Appeals to resellers who plan ahead.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM before it's gone</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>These products will be out of stock across the UK by Q4 ⚠️</td></tr>
+      <tr><td>Slide 2</td><td>Dyson Airwrap — Every. Single. Year.</td></tr>
+      <tr><td>Slide 3</td><td>AirPods Pro — Apple can't keep up with demand.</td></tr>
+      <tr><td>Slide 4</td><td>iPhone new release models — Shortage every September.</td></tr>
+      <tr><td>Slide 5</td><td>Resellers who stock early win. Resellers who wait lose.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market has stock now. DM before it's gone.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 15</div>
+  <h4>"The Electronics Reseller's Dream Product List"</h4>
+  <div class="why"><strong>Why it works:</strong> Aspirational language. Creates dream-state content that gets saved, shared, and sent to friends.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "We supply all of it."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The dream product list every reseller wants access to 🔥</td></tr>
+      <tr><td>Slide 2</td><td>iPhone 16 Pro — Margin kings. Sell the day they arrive.</td></tr>
+      <tr><td>Slide 3</td><td>AirPods Max — High ASP, low competition, huge demand.</td></tr>
+      <tr><td>Slide 4</td><td>Dyson Airwrap — Sells itself. You're just the supplier.</td></tr>
+      <tr><td>Slide 5</td><td>MacBook Pro M3 — Professionals pay premium. Always.</td></tr>
+      <tr><td>Slide 6</td><td>Apple Watch Ultra — Niche but high margin.</td></tr>
+      <tr><td>Slide 7 ★</td><td>This list is your starting inventory. We supply all of it.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 4 -->
+<h3>Format 4 — Reselling Education Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 16</div>
+  <h4>"How to Start Reselling Electronics With £500"</h4>
+  <div class="why"><strong>Why it works:</strong> Low entry point makes this accessible. Attracts new resellers who need a supplier immediately. Massive search volume.</div>
+  <div class="meta">8 Slides &nbsp;·&nbsp; CTA: DM to start</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to start reselling electronics with £500 — step by step 📲</td></tr>
+      <tr><td>Slide 2</td><td>Step 1: Pick ONE product category. AirPods = easiest entry.</td></tr>
+      <tr><td>Slide 3</td><td>Step 2: Find a verified supplier. (Not random Instagram DMs.)</td></tr>
+      <tr><td>Slide 4</td><td>Step 3: Order 2–3 units. Test the product and the supplier.</td></tr>
+      <tr><td>Slide 5</td><td>Step 4: List on Vinted, Facebook Marketplace, eBay.</td></tr>
+      <tr><td>Slide 6</td><td>Step 5: Reinvest every penny. Stack until you can bulk buy.</td></tr>
+      <tr><td>Slide 7</td><td>Step 6: Build repeat customers. They're worth more than new ones.</td></tr>
+      <tr><td>Slide 8 ★</td><td>Prime Market is the supplier for steps 2 and 3. DM to start.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 17</div>
+  <h4>"The Mistake Every New Reseller Makes"</h4>
+  <div class="why"><strong>Why it works:</strong> Negative lesson format gets saves. Positions you as an experienced authority in the niche.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: "One good supplier fixes all of these."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The mistake 90% of new resellers make — and how to avoid it 🚫</td></tr>
+      <tr><td>Slide 2</td><td>Mistake: Buying without testing your supplier first.</td></tr>
+      <tr><td>Slide 3</td><td>Mistake: Stocking too many products at once.</td></tr>
+      <tr><td>Slide 4</td><td>Mistake: Buying based on what you LIKE not what SELLS.</td></tr>
+      <tr><td>Slide 5</td><td>Mistake: Paying premium retail then trying to flip for profit.</td></tr>
+      <tr><td>Slide 6 ★</td><td>One good supplier fixes all of these. Prime Market.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 18</div>
+  <h4>"How to Turn £200 Into £600 Reselling Tech"</h4>
+  <div class="why"><strong>Why it works:</strong> Specific numbers perform better than vague claims. People stop scrolling for exact figures.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM "START"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to turn £200 into £600 reselling electronics 💷</td></tr>
+      <tr><td>Slide 2</td><td>Buy: 4x AirPods Gen 3 @ £50 each = £200 spend</td></tr>
+      <tr><td>Slide 3</td><td>Sell: 4x AirPods Gen 3 @ £129–£149 on Vinted/eBay</td></tr>
+      <tr><td>Slide 4</td><td>Revenue: £516–£596</td></tr>
+      <tr><td>Slide 5</td><td>Profit: £316–£396 on a £200 investment</td></tr>
+      <tr><td>Slide 6</td><td>That's a 158%–198% return. In under 2 weeks.</td></tr>
+      <tr><td>Slide 7 ★</td><td>This is the model. We supply the products. DM "START".</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 19</div>
+  <h4>"Platforms Every Reseller Should Be Selling On"</h4>
+  <div class="why"><strong>Why it works:</strong> Practical platform-by-platform value. Attracts people building reselling businesses who then need a supplier.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "You need one thing before all of these: reliable stock."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Every platform you should be selling electronics on 📱</td></tr>
+      <tr><td>Slide 2</td><td>eBay — Largest marketplace. Buyers everywhere. Fees ~12%.</td></tr>
+      <tr><td>Slide 3</td><td>Vinted — Zero seller fees. Electronics category growing fast.</td></tr>
+      <tr><td>Slide 4</td><td>Facebook Marketplace — No fees. Local + nationwide. Fast flips.</td></tr>
+      <tr><td>Slide 5</td><td>Depop — Gen Z buyers. AirPods and Apple Watch sell extremely well.</td></tr>
+      <tr><td>Slide 6</td><td>TikTok Shop — Direct from content. Fastest growing.</td></tr>
+      <tr><td>Slide 7 ★</td><td>You need one thing before all of these: reliable stock. That's us.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 20</div>
+  <h4>"How to Know If a Product Is Worth Reselling"</h4>
+  <div class="why"><strong>Why it works:</strong> Pure education. Gets saved and bookmarked. Attracts highly engaged followers who become buyers.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "We'll help you source it."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to tell if a product is worth reselling — before you buy 🧠</td></tr>
+      <tr><td>Slide 2</td><td>Check eBay sold listings. Not asking price — SOLD price.</td></tr>
+      <tr><td>Slide 3</td><td>Check Vinted recently sold. Average price in last 30 days.</td></tr>
+      <tr><td>Slide 4</td><td>Check demand: Is it in Google search trends? Up or down?</td></tr>
+      <tr><td>Slide 5</td><td>Check margin: Can you buy at 50% of sell price or better?</td></tr>
+      <tr><td>Slide 6</td><td>Check competition: How many sellers? Too many = crowded.</td></tr>
+      <tr><td>Slide 7 ★</td><td>If it passes all 5, it's worth stocking. We'll help you source it.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 21</div>
+  <h4>"The Reseller's Weekly Routine"</h4>
+  <div class="why"><strong>Why it works:</strong> Day-in-the-life content without showing your face. Relatable + aspirational. Strong save rate.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: Implied — follow to learn more</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The weekly routine of a serious electronics reseller 📆</td></tr>
+      <tr><td>Slide 2</td><td>Monday: Review current stock levels. What's moving? What's not?</td></tr>
+      <tr><td>Slide 3</td><td>Tuesday: Check eBay sold listings for pricing updates.</td></tr>
+      <tr><td>Slide 4</td><td>Wednesday: Contact supplier. Reorder fast-movers.</td></tr>
+      <tr><td>Slide 5</td><td>Thursday: List new inventory. Refresh old listings.</td></tr>
+      <tr><td>Slide 6</td><td>Friday: Process orders, pack, post. Track everything.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Saturday: Count profit. Plan next week. Repeat.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 22</div>
+  <h4>"How to Build a Reselling Business to £1K/Month"</h4>
+  <div class="why"><strong>Why it works:</strong> Income goal content performs extremely well. Everyone who watches this wants to know your supplier by the end.</div>
+  <div class="meta">8 Slides &nbsp;·&nbsp; CTA: "PM is the supplier behind this plan."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to build a reselling business to £1K/month 💰</td></tr>
+      <tr><td>Slide 2</td><td>Month 1: Start with £200–£500. Buy 3–5 units. Test everything.</td></tr>
+      <tr><td>Slide 3</td><td>Month 2: Reinvest profits. Build to 10–15 unit capacity.</td></tr>
+      <tr><td>Slide 4</td><td>Month 3: Streamline. Find your 2 best-selling products. Focus there.</td></tr>
+      <tr><td>Slide 5</td><td>Month 4: Add a second product line. Layer margins.</td></tr>
+      <tr><td>Slide 6</td><td>Month 5: Build repeat customers. They buy without you advertising.</td></tr>
+      <tr><td>Slide 7</td><td>Month 6: You're at £1K+ and you have a real business.</td></tr>
+      <tr><td>Slide 8 ★</td><td>Prime Market is the supplier behind this plan. DM to start.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 23</div>
+  <h4>"Why Most Resellers Quit in Month 1"</h4>
+  <div class="why"><strong>Why it works:</strong> Empathy-based content. Addresses fears directly. Goes viral in the reselling community.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow @PrimeMarket</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Why 80% of resellers quit in month 1 — and why you won't 🧠</td></tr>
+      <tr><td>Slide 2</td><td>They quit because: They bought the wrong products.</td></tr>
+      <tr><td>Slide 3</td><td>They quit because: They got a bad supplier and lost money.</td></tr>
+      <tr><td>Slide 4</td><td>They quit because: They expected profit in week 1.</td></tr>
+      <tr><td>Slide 5</td><td>They quit because: They had no system, no consistency.</td></tr>
+      <tr><td>Slide 6 ★</td><td>None of these have to happen. Follow @PrimeMarket. We'll show you.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 5 -->
+<h3>Format 5 — Vendor &amp; Source Reveal Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 24</div>
+  <h4>"Where Resellers Actually Get Their Stock"</h4>
+  <div class="why"><strong>Why it works:</strong> The most-searched question in the reselling community. This type of content goes viral almost immediately.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM "ACCESS"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Where serious resellers actually get their electronics stock 👇</td></tr>
+      <tr><td>Slide 2</td><td>Not eBay. Not Amazon. Not Argos clearance.</td></tr>
+      <tr><td>Slide 3</td><td>Real resellers access wholesale networks and verified suppliers.</td></tr>
+      <tr><td>Slide 4</td><td>These suppliers sell at 40–60% below retail.</td></tr>
+      <tr><td>Slide 5</td><td>Access requires vetting. Not everyone gets in.</td></tr>
+      <tr><td>Slide 6</td><td>Prime Market is a verified UK electronics supplier.</td></tr>
+      <tr><td>Slide 7 ★</td><td>DM "ACCESS" to enquire. Limited spots available.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 25</div>
+  <h4>"The Supplier Question Everyone Is Afraid to Ask"</h4>
+  <div class="why"><strong>Why it works:</strong> Intrigue-based hook. Forces the viewer to swipe through to find out what the question is.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to verify</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The question every new reseller is afraid to ask their supplier 👀</td></tr>
+      <tr><td>Slide 2</td><td>"Where does your stock actually come from?"</td></tr>
+      <tr><td>Slide 3</td><td>Most suppliers get defensive. That's a red flag.</td></tr>
+      <tr><td>Slide 4</td><td>We'll answer it openly: We source through verified B2B electronics networks and tested wholesale channels.</td></tr>
+      <tr><td>Slide 5</td><td>You should be able to ask your supplier anything.</td></tr>
+      <tr><td>Slide 6 ★</td><td>That's how Prime Market operates. DM to verify.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 26</div>
+  <h4>"Red Flags When Choosing an Electronics Supplier"</h4>
+  <div class="why"><strong>Why it works:</strong> Protects your audience AND positions you against every bad actor in the space. "Is it legit?" search volume shows this is a massive pain point.</div>
+  <div class="meta">8 Slides &nbsp;·&nbsp; CTA: "PM = proof, reviews, fixed pricing."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Red flags to look for in any electronics supplier 🚩</td></tr>
+      <tr><td>Slide 2</td><td>🚩 No website. DMs only.</td></tr>
+      <tr><td>Slide 3</td><td>🚩 Won't send proof of stock before payment.</td></tr>
+      <tr><td>Slide 4</td><td>🚩 No verifiable reviews from real buyers.</td></tr>
+      <tr><td>Slide 5</td><td>🚩 "Too good to be true" pricing with no explanation.</td></tr>
+      <tr><td>Slide 6</td><td>🚩 No fixed prices — changes every conversation.</td></tr>
+      <tr><td>Slide 7</td><td>🚩 Pressure to "act fast" or "limited time only" every time.</td></tr>
+      <tr><td>Slide 8 ★</td><td>Prime Market: proof of stock, real reviews, fixed pricing. DM to check.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 27</div>
+  <h4>"Green Flags in an Electronics Supplier"</h4>
+  <div class="why"><strong>Why it works:</strong> Positive version of the red flags format. Makes people check their current supplier against your list — and switch to you.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "Check PM against all — we pass."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Green flags that show a supplier is actually legit ✅</td></tr>
+      <tr><td>Slide 2</td><td>✅ They have a verifiable online presence.</td></tr>
+      <tr><td>Slide 3</td><td>✅ They send stock photos with date + your name on request.</td></tr>
+      <tr><td>Slide 4</td><td>✅ Customers vouch publicly, not just in private groups.</td></tr>
+      <tr><td>Slide 5</td><td>✅ They don't pressure you to buy before you're ready.</td></tr>
+      <tr><td>Slide 6</td><td>✅ They've been operating consistently for more than 6 months.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Check Prime Market against every one of these. We pass all.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 28</div>
+  <h4>"Why You Can't Find Good Suppliers on Google"</h4>
+  <div class="why"><strong>Why it works:</strong> Explains a genuine frustration that every new reseller hits. Positions you as the inside access everyone needs.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to enquire</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Why you can't find real electronics suppliers on Google 🔍</td></tr>
+      <tr><td>Slide 2</td><td>Google shows you retailers pretending to be wholesalers.</td></tr>
+      <tr><td>Slide 3</td><td>Real wholesale networks are closed — you need an introduction.</td></tr>
+      <tr><td>Slide 4</td><td>They don't advertise. They grow by reputation and word of mouth.</td></tr>
+      <tr><td>Slide 5</td><td>The best supply chains aren't publicly listed. They're accessed.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market operates as an introduction to that network. DM to enquire.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 6 -->
+<h3>Format 6 — Unboxing Text Recap Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 29</div>
+  <h4>"What Just Landed at Prime Market This Week"</h4>
+  <div class="why"><strong>Why it works:</strong> Authenticity without showing face. Creates FOMO. "New stock" content consistently gets views. Use as a recurring weekly post.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM "STOCK" to reserve</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What just landed at Prime Market this week 📦</td></tr>
+      <tr><td>Slide 2</td><td>🎧 AirPods Pro 2 — [X] units. Condition: sealed.</td></tr>
+      <tr><td>Slide 3</td><td>💨 Dyson Airwrap — [X] units. Multiple colourways.</td></tr>
+      <tr><td>Slide 4</td><td>⌚ Apple Watch Series 9 — [X] units. 41mm + 45mm.</td></tr>
+      <tr><td>Slide 5</td><td>📱 iPhone 15 Pro — [X] units. Blue + Natural Titanium.</td></tr>
+      <tr><td>Slide 6 ★</td><td>All gone before end of week last time. DM "STOCK" to reserve.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 30</div>
+  <h4>"Unboxed: What a £500 Bulk Order Looks Like"</h4>
+  <div class="why"><strong>Why it works:</strong> Proof of supply. Makes your business tangible. Converts sceptics into buyers by showing exactly what £500 gets.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM to place first order</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What a £500 bulk order from Prime Market actually looks like 👇</td></tr>
+      <tr><td>Slide 2</td><td>We ordered for a client this week. Here's what they received.</td></tr>
+      <tr><td>Slide 3</td><td>5x AirPods Gen 3 — All sealed. All authentic. Landed in 48hrs.</td></tr>
+      <tr><td>Slide 4</td><td>2x Dyson Airwrap — Gift-boxed. Client resold 1 before it arrived.</td></tr>
+      <tr><td>Slide 5</td><td>1x AirPods Max — High margin single unit. Profit = £XXX.</td></tr>
+      <tr><td>Slide 6</td><td>Total order value at retail: £1,400+. They paid: £500.</td></tr>
+      <tr><td>Slide 7 ★</td><td>This is what we do. DM to place your first order.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 31</div>
+  <h4>"What Arrived Today — Drop Recap"</h4>
+  <div class="why"><strong>Why it works:</strong> Short, fast-format. Works as a recurring series. Builds habit-forming content. Post this 2x per week.</div>
+  <div class="meta">5 Slides &nbsp;·&nbsp; CTA: Follow to be notified</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Today's drop recap 📦 Prime Market</td></tr>
+      <tr><td>Slide 2</td><td>🎧 AirPods Pro 2 × 10</td></tr>
+      <tr><td>Slide 3</td><td>💨 Dyson Corrale × 4</td></tr>
+      <tr><td>Slide 4</td><td>⌚ Apple Watch Ultra 2 × 3</td></tr>
+      <tr><td>Slide 5 ★</td><td>All reserved within 2 hours. Next drop: [date]. Follow to be notified.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 7 -->
+<h3>Format 7 — Myth-Bust &amp; Reality Check Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 32</div>
+  <h4>"Things People Think About Reselling That Are Wrong"</h4>
+  <div class="why"><strong>Why it works:</strong> Myth-busting is one of the highest-save formats on TikTok. Gets bookmarked and shared heavily.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "Which myth did you believe?"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Things people believe about reselling electronics that aren't true 🚫</td></tr>
+      <tr><td>Slide 2</td><td>Myth: "You need a lot of money to start." Reality: £200–£500 is enough.</td></tr>
+      <tr><td>Slide 3</td><td>Myth: "You need a business licence first." Reality: Start as a private seller.</td></tr>
+      <tr><td>Slide 4</td><td>Myth: "The market is too saturated." Reality: Demand grows every year.</td></tr>
+      <tr><td>Slide 5</td><td>Myth: "Good suppliers don't exist." Reality: You just haven't found yours yet.</td></tr>
+      <tr><td>Slide 6</td><td>Myth: "You need to sell on Amazon." Reality: Vinted + eBay = no fees + more margin.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Which myth did you believe? Drop it below. 👇</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 33</div>
+  <h4>"Why the Reselling Market Is NOT Saturated"</h4>
+  <div class="why"><strong>Why it works:</strong> Directly addresses the #1 objection from people who want to start but haven't. Huge volume of people searching this exact question.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: "Sourcing is the barrier. We remove it."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>"Reselling is too saturated." — Let's destroy this myth.</td></tr>
+      <tr><td>Slide 2</td><td>Apple sold 232 million iPhones last year. That's 232M second-hand units entering the market.</td></tr>
+      <tr><td>Slide 3</td><td>Dyson sells millions of units. They all need to go somewhere after upgrade.</td></tr>
+      <tr><td>Slide 4</td><td>Consumer electronics is a £500 billion global market.</td></tr>
+      <tr><td>Slide 5</td><td>"Saturated" means everyone's selling. The problem is most can't source correctly.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Sourcing is the barrier. We remove it. Prime Market.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 34</div>
+  <h4>"Stop Buying From These 'Suppliers'"</h4>
+  <div class="why"><strong>Why it works:</strong> Warning content is shared heavily. Saves your audience from making costly mistakes and builds fierce loyalty.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: "PM = verifiable. Consistent."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Stop buying electronics to resell from these sources ⚠️</td></tr>
+      <tr><td>Slide 2</td><td>❌ Instagram DMs from accounts with 300 followers and no content.</td></tr>
+      <tr><td>Slide 3</td><td>❌ "Suppliers" who only accept Revolut/PayPal Friends.</td></tr>
+      <tr><td>Slide 4</td><td>❌ Accounts that won't share their website or business name.</td></tr>
+      <tr><td>Slide 5</td><td>❌ Anyone who says "trust me bro" more than once.</td></tr>
+      <tr><td>Slide 6 ★</td><td>A real supplier has nothing to hide. Prime Market. Verifiable. Consistent.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 35</div>
+  <h4>"The Truth About Buying Authentic Products to Resell"</h4>
+  <div class="why"><strong>Why it works:</strong> Addresses the legitimacy concern that drives "Is it legit?" search volume. Major trust-building content.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow @PrimeMarket</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The truth about buying electronics to resell 🧠</td></tr>
+      <tr><td>Slide 2</td><td>Not every cheap product is fake. Not every cheap supplier is dodgy.</td></tr>
+      <tr><td>Slide 3</td><td>Real wholesale exists. Real margin exists. Real networks exist.</td></tr>
+      <tr><td>Slide 4</td><td>The question isn't "is it real?" The question is "can you verify it?"</td></tr>
+      <tr><td>Slide 5</td><td>Prime Market provides proof of authenticity on every order.</td></tr>
+      <tr><td>Slide 6 ★</td><td>If your supplier doesn't, find a new supplier.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 8 -->
+<h3>Format 8 — Brand Building &amp; Business Story Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 36</div>
+  <h4>"Why We Started Prime Market"</h4>
+  <div class="why"><strong>Why it works:</strong> Origin story content. Builds brand identity without a face. One of the highest follower-gaining formats available.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow the journey</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Why we started Prime Market — the real story.</td></tr>
+      <tr><td>Slide 2</td><td>We were resellers first. We knew the products. We didn't know the supply.</td></tr>
+      <tr><td>Slide 3</td><td>We got scammed by three "suppliers" before we found the right network.</td></tr>
+      <tr><td>Slide 4</td><td>We spent months building verified access to real electronics supply.</td></tr>
+      <tr><td>Slide 5</td><td>Then we opened it up. So others don't have to go through what we did.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market. A supplier built by resellers, for resellers.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 37</div>
+  <h4>"Where Prime Market Is Going in the Next 12 Months"</h4>
+  <div class="why"><strong>Why it works:</strong> Vision content builds community investment. People follow brands they believe are going somewhere.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: "You're watching the beginning."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Where Prime Market is going in the next 12 months 🗓️</td></tr>
+      <tr><td>Slide 2</td><td>Q3: Expand product range. More Apple. More Dyson. More Samsung.</td></tr>
+      <tr><td>Slide 3</td><td>Q4: Pre-stock for peak demand season. Bulk buyer programme.</td></tr>
+      <tr><td>Slide 4</td><td>Q1 2026: Launch private reseller community with exclusive supply access.</td></tr>
+      <tr><td>Slide 5</td><td>Q2 2026: UK's most trusted electronics supply network.</td></tr>
+      <tr><td>Slide 6 ★</td><td>You're watching the beginning. Follow @PrimeMarket.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 38</div>
+  <h4>"What Prime Market Is and What It Isn't"</h4>
+  <div class="why"><strong>Why it works:</strong> Clarity content. Removes confusion. Converts fence-sitters who need to understand what you are before buying.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to start</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What Prime Market is — and what it isn't. Let's be clear.</td></tr>
+      <tr><td>Slide 2</td><td>We ARE: A verified UK electronics supply partner.</td></tr>
+      <tr><td>Slide 3</td><td>We ARE: A source of authentic, checked stock at wholesale prices.</td></tr>
+      <tr><td>Slide 4</td><td>We ARE NOT: A dropshipper with no stock and slow delivery.</td></tr>
+      <tr><td>Slide 5</td><td>We ARE NOT: A middle man taking 4 weeks and your money.</td></tr>
+      <tr><td>Slide 6 ★</td><td>We are exactly what resellers need. Nothing more, nothing less.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 9 -->
+<h3>Format 9 — Seasonal &amp; Trend-Based Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 39</div>
+  <h4>"Products That Will Sell Out This Christmas — Stock Them Now"</h4>
+  <div class="why"><strong>Why it works:</strong> Seasonal urgency. Repeatable every year. Prime stock-building content that drives immediate DMs.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "DM before Q4 pricing kicks in."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The products that will sell out this Christmas — stock before September ⚠️</td></tr>
+      <tr><td>Slide 2</td><td>1. AirPods Pro 2 — Consistent sell-out every festive season.</td></tr>
+      <tr><td>Slide 3</td><td>2. Dyson Airwrap — Women's #1 gift request globally.</td></tr>
+      <tr><td>Slide 4</td><td>3. Apple Watch Series 9/10 — Gift market is enormous.</td></tr>
+      <tr><td>Slide 5</td><td>4. iPhone new model — Every September, shortage starts.</td></tr>
+      <tr><td>Slide 6</td><td>5. JBL/Sony speakers — Budget gift category. Always moves.</td></tr>
+      <tr><td>Slide 7 ★</td><td>We stock all of these. DM before Q4 pricing kicks in.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 40</div>
+  <h4>"Why Back to School Season Is the Best Time to Resell Tech"</h4>
+  <div class="why"><strong>Why it works:</strong> Seasonal education content most resellers ignore. Beats competitors by thinking a quarter ahead.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to enquire</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The most underrated reselling season isn't Christmas. It's this one. 📚</td></tr>
+      <tr><td>Slide 2</td><td>Back to school = laptops, tablets, earbuds, phones. All in demand.</td></tr>
+      <tr><td>Slide 3</td><td>MacBook Air demand spikes in August–September every year.</td></tr>
+      <tr><td>Slide 4</td><td>iPad + AirPods bundle is the student starter pack. Sell it.</td></tr>
+      <tr><td>Slide 5</td><td>Most resellers only plan for Christmas. Beat them by planning for September.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market has back-to-school stock ready. DM to enquire.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 41</div>
+  <h4>"New iPhone Just Dropped — Here's What It Means For Resellers"</h4>
+  <div class="why"><strong>Why it works:</strong> Reactive trending content. Massive search volume every September. Post this within hours of any Apple event.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM "iPHONE"</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>New iPhone just dropped. Here's what every reseller needs to know.</td></tr>
+      <tr><td>Slide 2</td><td>Previous model just got cheaper.</td></tr>
+      <tr><td>Slide 3</td><td>That means: Previous model is now available at better margins.</td></tr>
+      <tr><td>Slide 4</td><td>And: Demand for the new Pro is at its annual peak right now.</td></tr>
+      <tr><td>Slide 5</td><td>Two separate profit windows. Both open at the same time.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market has both. DM "iPHONE" to see current pricing.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 10 -->
+<h3>Format 10 — Knowledge &amp; Authority Building Slideshows</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 42</div>
+  <h4>"The Reseller's Guide to Pricing"</h4>
+  <div class="why"><strong>Why it works:</strong> Pure practical value. Massive save rate. Builds you as the definitive authority in the niche.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "Your margin lives or dies in step 3. PM helps."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to price your electronics for resale — the right way 💡</td></tr>
+      <tr><td>Slide 2</td><td>Step 1: Find the average sold price on eBay (last 30 days).</td></tr>
+      <tr><td>Slide 3</td><td>Step 2: Subtract platform fees (eBay ~12%, Vinted ~0–5%).</td></tr>
+      <tr><td>Slide 4</td><td>Step 3: Subtract your cost price. What's left is your margin.</td></tr>
+      <tr><td>Slide 5</td><td>Step 4: Price 5–10% below average to move stock fast.</td></tr>
+      <tr><td>Slide 6</td><td>Step 5: As you build reviews and reputation, price at average.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Your margin lives or dies in step 3. That's where Prime Market helps.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 43</div>
+  <h4>"What Every Reseller Should Know About Apple Products"</h4>
+  <div class="why"><strong>Why it works:</strong> Niche-specific education. Positions you as THE Apple reselling authority in the UK.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: DM to access Apple supply</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What every electronics reseller needs to know about Apple products 🍎</td></tr>
+      <tr><td>Slide 2</td><td>Apple products hold value better than any other consumer electronics brand.</td></tr>
+      <tr><td>Slide 3</td><td>A 2-year-old iPhone is still worth 60–70% of its original retail price.</td></tr>
+      <tr><td>Slide 4</td><td>AirPods Pro 2 launched at £249. They still sell for £200–£220 second-hand.</td></tr>
+      <tr><td>Slide 5</td><td>Apple Watch? MacBook? Same story. The brand holds the value.</td></tr>
+      <tr><td>Slide 6</td><td>Reselling Apple = selling the most resilient margin in tech.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Prime Market specialises in Apple supply. DM to access.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 44</div>
+  <h4>"What Makes Dyson Products Perfect for Reselling"</h4>
+  <div class="why"><strong>Why it works:</strong> Product-specific education. Positions Dyson as a category you own and understand better than anyone.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: DM to order</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Why Dyson is one of the best products to resell — explained 💨</td></tr>
+      <tr><td>Slide 2</td><td>Dyson products have near-zero competition from budget alternatives.</td></tr>
+      <tr><td>Slide 3</td><td>Their customer base doesn't compare prices — they want Dyson.</td></tr>
+      <tr><td>Slide 4</td><td>Dyson Airwrap sells out in retail every Christmas. Demand never drops.</td></tr>
+      <tr><td>Slide 5</td><td>Margins on Dyson run 30–50% when sourced correctly.</td></tr>
+      <tr><td>Slide 6 ★</td><td>This is why Prime Market stocks Dyson. Always. DM to order.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 45</div>
+  <h4>"The Best Platforms to Sell Electronics in the UK Right Now"</h4>
+  <div class="why"><strong>Why it works:</strong> UK-specific practical content. Fills a real gap. Drives massive saves from people just starting out.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "We handle supply. You master these 5."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Best platforms to sell electronics in the UK right now 📱</td></tr>
+      <tr><td>Slide 2</td><td>eBay — Still #1 volume. Fees high but traffic is unmatched.</td></tr>
+      <tr><td>Slide 3</td><td>Vinted — No seller fees on most items. Growing electronics section.</td></tr>
+      <tr><td>Slide 4</td><td>Facebook Marketplace — Local + national. No fees. Fast flips.</td></tr>
+      <tr><td>Slide 5</td><td>Gumtree — Still active. Good for bundles and bulk lots.</td></tr>
+      <tr><td>Slide 6</td><td>Back Market — For refurbished only. Higher prices, lower trust requirement.</td></tr>
+      <tr><td>Slide 7 ★</td><td>Master these 5 and you have a full reselling business. We handle supply.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 46</div>
+  <h4>"How to Resell on Vinted Without Getting Banned"</h4>
+  <div class="why"><strong>Why it works:</strong> Ultra-specific question with huge search volume. Practical value that keeps you top of mind.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow @PrimeMarket</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>How to resell electronics on Vinted without getting banned ⚠️</td></tr>
+      <tr><td>Slide 2</td><td>Rule 1: Don't list more than 5–7 identical items at once.</td></tr>
+      <tr><td>Slide 3</td><td>Rule 2: Vary your listings. Don't copy-paste descriptions.</td></tr>
+      <tr><td>Slide 4</td><td>Rule 3: Always list as "like new" or "good" — not brand new if unsealed.</td></tr>
+      <tr><td>Slide 5</td><td>Rule 4: Build up reviews before scaling volume.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Rule 5: Keep prices realistic. Outlier pricing triggers review.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- FORMAT 11 -->
+<h3>Format 11 — Aspirational &amp; Lifestyle Slideshows (Faceless)</h3>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 47</div>
+  <h4>"This Is What a Reselling Business Looks Like at Month 6"</h4>
+  <div class="why"><strong>Why it works:</strong> Progress content builds aspirational following. People want to follow the journey and be part of it.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: Follow the build</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>What a reselling business looks like at month 6 — real numbers 📊</td></tr>
+      <tr><td>Slide 2</td><td>Month 1: £200 invested. £600 returned. £400 profit.</td></tr>
+      <tr><td>Slide 3</td><td>Month 3: Reinvested. Now running £500–800 active inventory.</td></tr>
+      <tr><td>Slide 4</td><td>Month 6: Consistent £800–£1,200/month profit.</td></tr>
+      <tr><td>Slide 5</td><td>Same business model. Same products. Just compounded.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Anyone can build this. You need one thing: consistent supply.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 48</div>
+  <h4>"What I'd Do With £500 to Build an Electronics Reselling Business"</h4>
+  <div class="why"><strong>Why it works:</strong> First-person hypothetical performs better than instructional. More conversational = more comments.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "Your supplier is Prime Market."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>If I had £500 and wanted to build a tech reselling business — here's exactly what I'd do.</td></tr>
+      <tr><td>Slide 2</td><td>£200 → 4x AirPods Gen 3. Sell 2 to recover cost. Hold 2 for profit.</td></tr>
+      <tr><td>Slide 3</td><td>Recovered funds → 1x Dyson Corrale. List immediately.</td></tr>
+      <tr><td>Slide 4</td><td>Profits → Stack. Don't spend. Buy 2 units where you bought 1.</td></tr>
+      <tr><td>Slide 5</td><td>By month 2: Running at £400–600 in active inventory.</td></tr>
+      <tr><td>Slide 6</td><td>By month 3: Reinvesting £1K+ per cycle.</td></tr>
+      <tr><td>Slide 7 ★</td><td>This is the model. Your supplier is Prime Market.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 49</div>
+  <h4>"The Side Hustle That Actually Scales"</h4>
+  <div class="why"><strong>Why it works:</strong> "Side hustle" content has billions of views on TikTok. Your content fits directly into this mega-genre.</div>
+  <div class="meta">6 Slides &nbsp;·&nbsp; CTA: "You bring the ambition."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>The side hustle most people overlook — and why it actually scales 🔺</td></tr>
+      <tr><td>Slide 2</td><td>Electronics reselling. Not dropshipping. Not print-on-demand. Real, physical product.</td></tr>
+      <tr><td>Slide 3</td><td>You buy at wholesale. You sell at market. You keep the difference.</td></tr>
+      <tr><td>Slide 4</td><td>Every pound reinvested compounds. You're not trading time for money.</td></tr>
+      <tr><td>Slide 5</td><td>The ceiling is your supply access and your ambition.</td></tr>
+      <tr><td>Slide 6 ★</td><td>Prime Market handles the supply. You bring the ambition.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="idea-card">
+  <div class="idea-number">Idea 50</div>
+  <h4>"Signs You're Ready to Scale Your Reselling Business"</h4>
+  <div class="why"><strong>Why it works:</strong> Milestone content. Resonates deeply with people mid-build. Gets saves and shares from people who tag friends.</div>
+  <div class="meta">7 Slides &nbsp;·&nbsp; CTA: "3+ checked? DM Prime Market."</div>
+  <table class="slide-table">
+    <thead><tr><th>Slide</th><th>Text</th></tr></thead>
+    <tbody>
+      <tr><td>Slide 1</td><td>Signs you're ready to scale your reselling business 📈</td></tr>
+      <tr><td>Slide 2</td><td>✅ You've sold 10+ units successfully.</td></tr>
+      <tr><td>Slide 3</td><td>✅ Your products sell within 48–72 hours of listing.</td></tr>
+      <tr><td>Slide 4</td><td>✅ You have at least 2 verified buyers asking for more.</td></tr>
+      <tr><td>Slide 5</td><td>✅ You're reinvesting 100% of profits.</td></tr>
+      <tr><td>Slide 6</td><td>✅ You're frustrated your supplier can't keep up with you.</td></tr>
+      <tr><td>Slide 7 ★</td><td>If you checked 3 or more: it's time. Prime Market scales with you.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+<hr class="divider">
+
+
+<!-- MASTER SHEET -->
+<h2>Master Content Sheet — Quick Reference</h2>
+<p style="font-family:Arial,sans-serif;font-size:13px;color:#666;margin-bottom:20px;">All 50 ideas in one table. Use this as your content calendar reference.</p>
+
+<table class="summary-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Content Idea</th>
+      <th>Hook (Slide 1)</th>
+      <th>Core Slides</th>
+      <th>CTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Overpaying for these</td><td>"You're overpaying for these. Every. Single. Time."</td><td>AirPods Pro · Dyson Airwrap · Apple Watch prices</td><td>DM "PRICES"</td></tr>
+    <tr><td>2</td><td>Items Under £100 × 3</td><td>"5 items under £100 that flip for 3x"</td><td>AirPods · Dyson V8 · Watch SE · JBL · iPad</td><td>DM "LIST"</td></tr>
+    <tr><td>3</td><td>Retail vs Our Price</td><td>"Retail vs what suppliers actually charge"</td><td>AirPods Max · Dyson · iPhone comparisons</td><td>Follow for drops</td></tr>
+    <tr><td>4</td><td>Losing at Retail</td><td>"Buying these at retail? You're leaving money on the table."</td><td>Dyson · AirPods · iPad Air reality checks</td><td>DM to enquire</td></tr>
+    <tr><td>5</td><td>Never Drops in Demand</td><td>"These have sold every month for 3 years"</td><td>AirPods Pro · Dyson · iPhone · Watch · MacBook</td><td>Follow for drops</td></tr>
+    <tr><td>6</td><td>Why Choose PM</td><td>"Why our clients keep coming back"</td><td>Real stock · Verified orders · Tested · UK network</td><td>DM to join</td></tr>
+    <tr><td>7</td><td>What Customers Got</td><td>"What went out from Prime Market this week"</td><td>4 customer orders with outcomes</td><td>Follow @PrimeMarket</td></tr>
+    <tr><td>8</td><td>Supplier Checklist</td><td>"Before you buy — ask these 5 questions"</td><td>5 verification questions</td><td>"PM answers yes to all 5"</td></tr>
+    <tr><td>9</td><td>First 50 Orders</td><td>"Our first 50 orders taught us everything"</td><td>3 order milestone lessons</td><td>Follow along</td></tr>
+    <tr><td>10</td><td>Sets Us Apart</td><td>"Every supplier says best. Here's why PM actually is."</td><td>Most vs PM process comparison</td><td>DM to start</td></tr>
+    <tr><td>11</td><td>Products Everyone Wants</td><td>"5 electronics everyone is searching for right now"</td><td>AirPods Pro · Dyson · iPhone · Watch · Samsung</td><td>Follow for drops</td></tr>
+    <tr><td>12</td><td>Best to Flip</td><td>"5 best electronics to flip (real margins)"</td><td>5 products with exact profit ranges</td><td>DM for supply pricing</td></tr>
+    <tr><td>13</td><td>Gifts That Sell Out</td><td>"Gifts that sell out every year — stock now"</td><td>Dyson · AirPods · Apple Watch history</td><td>DM to order</td></tr>
+    <tr><td>14</td><td>Out of Stock Q4</td><td>"These will be out of stock across the UK by Q4"</td><td>Dyson · AirPods · iPhone shortage patterns</td><td>DM before gone</td></tr>
+    <tr><td>15</td><td>Dream Product List</td><td>"The dream product list every reseller wants access to"</td><td>iPhone 16 Pro · AirPods Max · Dyson · MacBook · Watch Ultra</td><td>"We supply all of it"</td></tr>
+    <tr><td>16</td><td>Start With £500</td><td>"How to start reselling with £500 — step by step"</td><td>6 numbered steps</td><td>PM is step 2+3</td></tr>
+    <tr><td>17</td><td>Biggest Mistakes</td><td>"The mistake 90% of new resellers make"</td><td>4 specific mistakes</td><td>"One supplier fixes all"</td></tr>
+    <tr><td>18</td><td>£200 into £600</td><td>"How to turn £200 into £600 reselling tech"</td><td>Exact buy/sell/profit calculation</td><td>DM "START"</td></tr>
+    <tr><td>19</td><td>Platforms to Sell</td><td>"Every platform to sell electronics on"</td><td>eBay · Vinted · Facebook · Depop · TikTok Shop</td><td>"Need reliable stock first"</td></tr>
+    <tr><td>20</td><td>Is It Worth Reselling</td><td>"How to know if a product is worth reselling"</td><td>5-point evaluation checklist</td><td>"We'll help you source it"</td></tr>
+    <tr><td>21</td><td>Weekly Routine</td><td>"The weekly routine of a serious reseller"</td><td>Mon–Sat daily actions</td><td>Implied follow</td></tr>
+    <tr><td>22</td><td>£1K/Month Blueprint</td><td>"How to build reselling to £1K/month"</td><td>Month 1–6 milestones</td><td>"PM is the supplier behind this"</td></tr>
+    <tr><td>23</td><td>Why Resellers Quit</td><td>"Why 80% quit in month 1"</td><td>4 reasons they fail</td><td>Follow @PrimeMarket</td></tr>
+    <tr><td>24</td><td>Where Stock Comes From</td><td>"Where serious resellers actually get their stock"</td><td>Not eBay/Amazon · Wholesale networks · PM access</td><td>DM "ACCESS"</td></tr>
+    <tr><td>25</td><td>Supplier Question</td><td>"The question every reseller is afraid to ask"</td><td>"Where does stock come from?" — PM answers openly</td><td>DM to verify</td></tr>
+    <tr><td>26</td><td>Red Flags</td><td>"Red flags in any electronics supplier"</td><td>6 red flags</td><td>"PM = proof + reviews + fixed pricing"</td></tr>
+    <tr><td>27</td><td>Green Flags</td><td>"Green flags that show a supplier is legit"</td><td>5 green flags</td><td>"Check PM — we pass all"</td></tr>
+    <tr><td>28</td><td>Can't Google Suppliers</td><td>"Why you can't find real suppliers on Google"</td><td>Why Google fails · How real networks work</td><td>DM to enquire</td></tr>
+    <tr><td>29</td><td>What Just Landed</td><td>"What just landed at Prime Market this week"</td><td>4 product lines with units</td><td>DM "STOCK" to reserve</td></tr>
+    <tr><td>30</td><td>£500 Bulk Order</td><td>"What a £500 bulk order looks like"</td><td>Client order breakdown with retail vs cost</td><td>DM first order</td></tr>
+    <tr><td>31</td><td>Drop Recap</td><td>"Today's drop recap"</td><td>3 product lines × units</td><td>Follow for next drop</td></tr>
+    <tr><td>32</td><td>Reselling Myths</td><td>"Things people believe that aren't true"</td><td>5 myth/reality pairs</td><td>"Which myth did you believe?"</td></tr>
+    <tr><td>33</td><td>Not Saturated</td><td>"'Reselling is saturated' — let's destroy this myth."</td><td>Apple/Dyson/global market data</td><td>"Sourcing is the barrier. PM removes it."</td></tr>
+    <tr><td>34</td><td>Stop Buying From These</td><td>"Stop buying from these sources"</td><td>4 scam supplier types</td><td>"Real supplier hides nothing"</td></tr>
+    <tr><td>35</td><td>Truth About Authentic</td><td>"The truth about buying electronics to resell"</td><td>Real wholesale exists · PM provides proof</td><td>Follow @PrimeMarket</td></tr>
+    <tr><td>36</td><td>Why We Started</td><td>"Why we started Prime Market — the real story."</td><td>Origin story: scammed → built → opened up</td><td>Follow the journey</td></tr>
+    <tr><td>37</td><td>Next 12 Months</td><td>"Where PM is going in the next 12 months"</td><td>Q3–Q2 2026 roadmap</td><td>"You're watching the beginning"</td></tr>
+    <tr><td>38</td><td>What PM Is/Isn't</td><td>"What Prime Market is — and what it isn't."</td><td>ARE vs ARE NOT comparisons</td><td>DM to start</td></tr>
+    <tr><td>39</td><td>Christmas Stock</td><td>"Products selling out this Christmas"</td><td>5 seasonal sell-out products</td><td>"DM before Q4 pricing"</td></tr>
+    <tr><td>40</td><td>Back to School</td><td>"Most underrated season isn't Christmas."</td><td>MacBook · iPad · AirPods student demand</td><td>DM to enquire</td></tr>
+    <tr><td>41</td><td>New iPhone Drop</td><td>"New iPhone just dropped — what resellers need to know."</td><td>Two profit windows: old + new model</td><td>DM "iPHONE"</td></tr>
+    <tr><td>42</td><td>Pricing Guide</td><td>"How to price for resale — the right way"</td><td>5-step pricing system</td><td>"Margin lives in step 3. PM helps."</td></tr>
+    <tr><td>43</td><td>Apple Deep Dive</td><td>"What every reseller needs to know about Apple"</td><td>Value retention data for key products</td><td>DM for Apple supply</td></tr>
+    <tr><td>44</td><td>Dyson Deep Dive</td><td>"Why Dyson is perfect for reselling"</td><td>Brand loyalty · seasonal sell-out · margin data</td><td>DM to order</td></tr>
+    <tr><td>45</td><td>UK Platforms</td><td>"Best platforms in UK right now"</td><td>5 platforms with fees + pros</td><td>"We handle supply"</td></tr>
+    <tr><td>46</td><td>Vinted Without Ban</td><td>"Resell on Vinted without getting banned"</td><td>5 specific rules</td><td>Follow @PrimeMarket</td></tr>
+    <tr><td>47</td><td>Month 6 Reality</td><td>"What reselling looks like at month 6"</td><td>Month 1/3/6 real number progression</td><td>Follow the build</td></tr>
+    <tr><td>48</td><td>If I Had £500</td><td>"If I had £500 to build a tech reselling business"</td><td>Month-by-month investment plan</td><td>"Your supplier is Prime Market"</td></tr>
+    <tr><td>49</td><td>Side Hustle That Scales</td><td>"The side hustle most people overlook"</td><td>Why electronics reselling beats dropshipping</td><td>"PM handles supply. You bring ambition."</td></tr>
+    <tr><td>50</td><td>Signs Ready to Scale</td><td>"Signs you're ready to scale"</td><td>5-point milestone checklist</td><td>"3+ checked? DM Prime Market."</td></tr>
+  </tbody>
+</table>
+
+
+<!-- POSTING STRATEGY -->
+<div class="strategy-box">
+  <h3>POSTING STRATEGY FOR PRIME MARKET</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Priority</th>
+        <th>Format</th>
+        <th>Frequency</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Price Reveal Slideshows</td><td>3× per week</td><td>Highest share + follow rate in this niche</td></tr>
+      <tr><td>2</td><td>Education / How-To</td><td>2× per week</td><td>Saves + authority building</td></tr>
+      <tr><td>3</td><td>Stock Drop Recaps</td><td>2× per week</td><td>Proof of supply + FOMO</td></tr>
+      <tr><td>4</td><td>Legitimacy / Social Proof</td><td>1× per week</td><td>Trust building</td></tr>
+      <tr><td>5</td><td>Myth-Bust / Reality Check</td><td>1× per week</td><td>Viral shares</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-family:Arial,sans-serif;font-size:13px;margin-top:20px;margin-bottom:8px;"><strong>Optimal posting times (UK):</strong> 7–9am &nbsp;|&nbsp; 12–1pm &nbsp;|&nbsp; 7–9pm</p>
+
+  <p style="font-family:Arial,sans-serif;font-size:13px;margin-bottom:8px;"><strong>Hashtag stack (use on every post):</strong></p>
+  <div class="hashtag-block">
+    #reselling &nbsp; #electronicsreseller &nbsp; #applerep &nbsp; #dysonstyle<br>
+    #sidehustle &nbsp; #primemarketuk &nbsp; #supplieruk &nbsp; #resellertips<br>
+    #makemoneyuk &nbsp; #facelessbusiness
+  </div>
+</div>
+
+
+<hr class="divider">
+<p style="font-family:Arial,sans-serif;font-size:11px;color:#aaa;text-align:center;margin-top:40px;">
+  Prime Market · TikTok Content Strategy · Built from @officialtwinsupply patterns + UK electronics reselling niche research<br>
+  ★ = CTA slide (always final slide)
+</p>
+
+</body>
+</html>
